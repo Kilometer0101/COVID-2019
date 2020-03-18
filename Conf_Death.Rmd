@@ -19,25 +19,6 @@ library(lubridate)
 library(DT)
 ```
 
-```{r, eval = F, echo=F}
-dat <-
-  "data" %>% 
-  list.files(full.names = TRUE) %>% 
-  str_subset(".csv") %>%
-  str_subset("corona_conf_death") %>% 
-  set_names(.) %>% 
-  imap_dfr(~ read.csv(.x, stringsAsFactors = F) %>% 
-             mutate(file = basename(.y))) %>% 
-  filter(!is.na(Confirmed)) %>% 
-  mutate(Area = str_remove(file, "corona_conf_death_"),
-         Area = str_remove(Area, ".csv"),
-         Area = if_else(Area == "jp", "Japan", Area)) %>% 
-  select(-file) %>% 
-  select(Area, everything())
-
-write.csv(dat, "data/dat_cofdeath.csv", row.names = F)
-```
-
 ```{r}
 dat <- 
   "data/dat_cofdeath.csv" %>% 
@@ -55,11 +36,30 @@ g <-
                        Confirmed == max(Confirmed)),
             aes(label = Area, x = Confirmed + 20),
             hjust = 0)+
-  scale_x_continuous(limits = c(0, 3000))+
+#  scale_x_continuous(limits = c(0, 3000))+
   theme_bw()+
   theme(legend.position = "none")
 g
 
+g_jp_G <-
+  dat %>%
+  filter(Area %in% c("Japan", "Germany")) %>% 
+  ggplot()+
+  aes(Confirmed, Death, color = Area)+
+  geom_point()+
+  geom_path()+
+  geom_text(data = dat %>% 
+              filter(Area %in% c("Japan", "Germany")) %>% 
+              group_by(Area) %>% 
+              filter(Death == max(Death) & 
+                       Confirmed == max(Confirmed)),
+            aes(label = Area, x = Confirmed + 20),
+            hjust = 0)+
+  scale_x_continuous(limits = c(0, 6500))+
+  theme_bw()+
+  theme(legend.position = "none")
+
+g_jp_G
 ```
 
 ```{r, fig.width=10, fig.height=6}
@@ -89,8 +89,40 @@ dat_week %>%
             hjust = 0)+
   geom_vline(data = dat_week %>% filter(tag == 0),
              aes(xintercept = Confirmed), linetype = "dotted")+
-  scale_x_continuous(limits = c(0, 3000))+
+#  scale_x_continuous(limits = c(0, 3000))+
   theme_bw()+
   theme(legend.position = "none")+
   facet_wrap(~Area)
+```
+
+```{r, fig.width=10, fig.height=4}
+dat_week %>% 
+  filter(Area %in% c("Japan", "Germany")) %>% 
+  ggplot()+
+  aes(Confirmed, Death, color = Area)+
+  geom_point()+
+  geom_path()+
+  geom_text(data = dat %>% 
+              filter(Area %in% c("Japan", "Germany")) %>%
+              group_by(Area) %>% 
+              filter(Death == max(Death) & 
+                       Confirmed == max(Confirmed)),
+            aes(label = Area, x = Confirmed + 20),
+            hjust = 0)+
+  geom_vline(data = dat_week %>%
+               filter(tag == 0) %>%
+               filter(Area %in% c("Japan", "Germany")),
+             aes(xintercept = Confirmed), linetype = "dotted")+
+#  scale_x_continuous(limits = c(0, 3000))+
+  theme_bw()+
+  theme(legend.position = "none")+
+  facet_wrap(~Area, scales = "free_x")
+```
+
+```{r}
+dat %>% 
+  filter(Area == "Germany") %>% 
+  filter(Death >= 2) %>% 
+  lm(Death ~ Confirmed, data = .) %>% 
+  summary()
 ```
