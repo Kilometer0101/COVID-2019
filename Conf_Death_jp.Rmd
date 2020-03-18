@@ -1,0 +1,75 @@
+---
+title: "Conf_Death_jp"
+author: "km"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: 
+  html_document: 
+  keep_md: TRUE
+---
+
+## link: [WHO Coronavirus disease (COVID-2019) situation reports](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/)
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 4)
+library(tidyverse)
+library(ggrepel)
+library(lubridate)
+library(DT)
+```
+
+```{r, eval = F}
+library(tidyverse)
+library(ggrepel)
+library(lubridate)
+```
+
+```{r}
+dat <- 
+  "data/corona_conf_death_jp.csv" %>% 
+  read.csv(stringsAsFactors = F) %>% 
+  filter(!is.na(Confirmed)) %>% 
+  mutate(Date = ymd(Date))
+```
+
+```{r, echo=F}
+datatable(dat %>% arrange(desc(Date)))
+```
+
+```{r}
+.date <-
+  c("2020-02-27", "2020-03-08") %>% 
+  ymd()
+
+dat %>% 
+  ggplot()+
+  aes(Confirmed, Death)+
+  geom_path()+
+  geom_point()+
+  geom_vline(data = dat %>% filter(Date %in% .date),
+             aes(xintercept = Confirmed), 
+             linetype = "dotted")+ 
+  geom_text(data = dat %>% filter(Date %in% .date),
+            aes(label = Date, y = Death + 5))+
+  theme_classic()
+
+
+.date <- 
+  dat %>% 
+  rowid_to_column() %>% 
+  mutate(rowid = rowid - 38) %>% 
+  filter(rowid %% 7 == 0) %>% 
+  .$Date
+
+dat %>% 
+  ggplot()+
+  aes(Confirmed, Death)+
+  geom_path()+
+  geom_point()+
+  geom_vline(data = dat %>% filter(Date %in% .date),
+             aes(xintercept = Confirmed), 
+             linetype = "dotted")+ 
+  geom_text(data = dat %>% filter(Date %in% .date),
+            aes(label = Date, y = Death + 5))+
+  theme_classic()
+```
