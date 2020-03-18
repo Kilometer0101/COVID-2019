@@ -33,8 +33,9 @@ dat <-
 ```
 
 ```{r, echo=F}
-datatable(dat %>% arrange(desc(Date)))
+head(dat)
 ```
+
 
 ```{r}
 .date <-
