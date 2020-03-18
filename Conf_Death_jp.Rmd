@@ -33,7 +33,7 @@ dat <-
 ```
 
 ```{r, echo=F}
-head(dat)
+tail(dat)
 ```
 
 
