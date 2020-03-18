@@ -32,9 +32,15 @@ dat %>%
   aes(Confirmed, Death, color = Area)+
   geom_point()+
   geom_path()+
+  geom_text(data = dat %>% 
+              group_by(Area) %>% 
+              filter(Death == max(Death) & 
+                       Confirmed == max(Confirmed)),
+            aes(label = Area, x = Confirmed + 20),
+            hjust = 0)+
+  scale_x_continuous(limits = c(0, 3000))+
   theme_bw()+
-  theme(legend.position = "none")+
-  facet_wrap(~Area)
+theme(legend.position = "none")
 ```
 
 ![](Conf_Death_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
