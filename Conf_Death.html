@@ -371,17 +371,9 @@ summary {
 
 <div id="link-who-coronavirus-disease-covid-2019-situation-reports" class="section level2">
 <h2>link: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">WHO Coronavirus disease (COVID-2019) situation reports</a></h2>
-<pre class="r"><code>dat &lt;-
-  &quot;data&quot; %&gt;% 
-  list.files(full.names = TRUE) %&gt;% 
-  str_subset(&quot;.csv&quot;) %&gt;% 
-  set_names(.) %&gt;% 
-  imap_dfr(~ read.csv(.x, stringsAsFactors = F) %&gt;% 
-             mutate(file = basename(.y))) %&gt;% 
-  filter(!is.na(Confirmed)) %&gt;% 
-  mutate(Area = str_remove(file, &quot;corona_conf_death_&quot;),
-         Area = str_remove(Area, &quot;.csv&quot;),
-         Area = if_else(Area == &quot;jp&quot;, &quot;Japan&quot;, Area))
+<pre class="r"><code>dat &lt;- 
+  &quot;data/dat_cofdeath.csv&quot; %&gt;% 
+  read.csv(stringsAsFactors = F)
 
 g &lt;-
   dat %&gt;% 

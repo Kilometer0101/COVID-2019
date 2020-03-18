@@ -19,18 +19,29 @@ library(lubridate)
 library(DT)
 ```
 
-```{r}
+```{r, eval = F, echo=F}
 dat <-
   "data" %>% 
   list.files(full.names = TRUE) %>% 
-  str_subset(".csv") %>% 
+  str_subset(".csv") %>%
+  str_subset("corona_conf_death") %>% 
   set_names(.) %>% 
   imap_dfr(~ read.csv(.x, stringsAsFactors = F) %>% 
              mutate(file = basename(.y))) %>% 
   filter(!is.na(Confirmed)) %>% 
   mutate(Area = str_remove(file, "corona_conf_death_"),
          Area = str_remove(Area, ".csv"),
-         Area = if_else(Area == "jp", "Japan", Area))
+         Area = if_else(Area == "jp", "Japan", Area)) %>% 
+  select(-file) %>% 
+  select(Area, everything())
+
+write.csv(dat, "data/dat_cofdeath.csv", row.names = F)
+```
+
+```{r}
+dat <- 
+  "data/dat_cofdeath.csv" %>% 
+  read.csv(stringsAsFactors = F)
 
 g <-
   dat %>% 

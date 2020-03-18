@@ -14,18 +14,12 @@ output:
 
 
 
+
+
 ```r
-dat <-
-  "data" %>% 
-  list.files(full.names = TRUE) %>% 
-  str_subset(".csv") %>% 
-  set_names(.) %>% 
-  imap_dfr(~ read.csv(.x, stringsAsFactors = F) %>% 
-             mutate(file = basename(.y))) %>% 
-  filter(!is.na(Confirmed)) %>% 
-  mutate(Area = str_remove(file, "corona_conf_death_"),
-         Area = str_remove(Area, ".csv"),
-         Area = if_else(Area == "jp", "Japan", Area))
+dat <- 
+  "data/dat_cofdeath.csv" %>% 
+  read.csv(stringsAsFactors = F)
 
 g <-
   dat %>% 
@@ -45,7 +39,7 @@ g <-
 g
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 
 ```r
@@ -53,7 +47,7 @@ g +
   facet_wrap(~Area)
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 
 ```r
@@ -84,4 +78,4 @@ dat_week %>%
   facet_wrap(~Area)
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
