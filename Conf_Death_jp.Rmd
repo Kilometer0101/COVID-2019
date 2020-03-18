@@ -3,8 +3,8 @@ title: "Conf_Death_jp"
 author: "km"
 date: "`r format(Sys.time(), '%Y/%m/%d')`"
 output: 
-  html_document: 
-  keep_md: TRUE
+  html_document:
+    keep_md: true
 ---
 
 ## link: [WHO Coronavirus disease (COVID-2019) situation reports](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/)
