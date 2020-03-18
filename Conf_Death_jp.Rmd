@@ -65,10 +65,59 @@ dat %>%
 .date <- 
   dat %>% 
   rowid_to_column() %>% 
-  mutate(rowid = rowid - 38) %>% 
+  mutate(tag = ifelse(Date == "2020-02-27", rowid,0),
+         tag = sum(tag)) %>% 
+  mutate(rowid = rowid - tag) %>% 
   filter(rowid %% 7 == 0) %>% 
   .$Date
 
 dat %>% 
-  gg_cdplot(.date)
+  gg_cdplot(.date)+
+  scale_x_continuous(limits = c(0, max(dat$Confirmed) + 15))
+
+
+.date <-
+  dat %>% 
+  rowid_to_column() %>% 
+  mutate(rowid = rowid - max(rowid)) %>% 
+  filter(rowid %% 7 == 0) %>% 
+  .$Date
+
+dat %>% 
+  gg_cdplot(.date)+
+  scale_x_continuous(limits = c(0, max(dat$Confirmed) + 15))
 ```
+
+```{r, fig.width=8, fig.height=3}
+dat_d <-
+  dat %>% 
+  filter(Date %in% .date) %>% 
+  mutate(d_Conf = Confirmed - lag(Confirmed),
+         d_Death = Death - lag(Death))
+
+dat_d %>%
+  select(Date, d_Conf, d_Death) %>% 
+  pivot_longer(cols = c(d_Conf, d_Death)) %>%
+  filter(!is.na(value)) %>% 
+  ggplot()+
+  aes(Date, value, color = name)+
+  geom_point()+
+  geom_path()+
+  theme_bw()+
+  facet_wrap(~name, scales = "free", nrow = 1)
+```
+
+```{r}
+dat %>% 
+  filter(Date >= ymd("2020-03-08")) %>% 
+  lm(Death ~ Confirmed, data = .) %>% 
+  summary()
+
+dat %>% 
+  filter(Date >= ymd("2020-02-26"), 
+         Date <= ymd("2020-03-02")) %>% 
+  lm(Death ~ Confirmed, data = .) %>% 
+  summary()
+```
+
+
