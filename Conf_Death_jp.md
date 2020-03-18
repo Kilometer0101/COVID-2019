@@ -40,6 +40,24 @@ dat <-
 ```
 
 
+```r
+gg_cdplot <- 
+  function(dat, .date){
+    dat %>% 
+      ggplot()+
+      aes(Confirmed, Death)+
+      geom_path()+
+      geom_point()+
+      geom_vline(data = dat %>% filter(Date %in% .date),
+                 aes(xintercept = Confirmed), 
+                 linetype = "dotted")+ 
+      geom_text(data = dat %>% filter(Date %in% .date),
+                aes(label = Date, y = Death + 5))+
+      theme_classic()
+  }
+```
+
+
 
 ```r
 .date <-
@@ -47,19 +65,10 @@ dat <-
   ymd()
 
 dat %>% 
-  ggplot()+
-  aes(Confirmed, Death)+
-  geom_path()+
-  geom_point()+
-  geom_vline(data = dat %>% filter(Date %in% .date),
-             aes(xintercept = Confirmed), 
-             linetype = "dotted")+ 
-  geom_text(data = dat %>% filter(Date %in% .date),
-            aes(label = Date, y = Death + 5))+
-  theme_classic()
+  gg_cdplot(.date)
 ```
 
-![](Conf_Death_jp_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](Conf_Death_jp_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 ```r
 .date <- 
@@ -70,16 +79,7 @@ dat %>%
   .$Date
 
 dat %>% 
-  ggplot()+
-  aes(Confirmed, Death)+
-  geom_path()+
-  geom_point()+
-  geom_vline(data = dat %>% filter(Date %in% .date),
-             aes(xintercept = Confirmed), 
-             linetype = "dotted")+ 
-  geom_text(data = dat %>% filter(Date %in% .date),
-            aes(label = Date, y = Death + 5))+
-  theme_classic()
+  gg_cdplot(.date)
 ```
 
-![](Conf_Death_jp_files/figure-html/unnamed-chunk-4-2.png)<!-- -->
+![](Conf_Death_jp_files/figure-html/unnamed-chunk-5-2.png)<!-- -->

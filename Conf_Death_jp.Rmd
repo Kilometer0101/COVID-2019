@@ -36,6 +36,23 @@ dat <-
 tail(dat)
 ```
 
+```{r}
+gg_cdplot <- 
+  function(dat, .date){
+    dat %>% 
+      ggplot()+
+      aes(Confirmed, Death)+
+      geom_path()+
+      geom_point()+
+      geom_vline(data = dat %>% filter(Date %in% .date),
+                 aes(xintercept = Confirmed), 
+                 linetype = "dotted")+ 
+      geom_text(data = dat %>% filter(Date %in% .date),
+                aes(label = Date, y = Death + 5))+
+      theme_classic()
+  }
+```
+
 
 ```{r}
 .date <-
@@ -43,17 +60,7 @@ tail(dat)
   ymd()
 
 dat %>% 
-  ggplot()+
-  aes(Confirmed, Death)+
-  geom_path()+
-  geom_point()+
-  geom_vline(data = dat %>% filter(Date %in% .date),
-             aes(xintercept = Confirmed), 
-             linetype = "dotted")+ 
-  geom_text(data = dat %>% filter(Date %in% .date),
-            aes(label = Date, y = Death + 5))+
-  theme_classic()
-
+  gg_cdplot(.date)
 
 .date <- 
   dat %>% 
@@ -63,14 +70,5 @@ dat %>%
   .$Date
 
 dat %>% 
-  ggplot()+
-  aes(Confirmed, Death)+
-  geom_path()+
-  geom_point()+
-  geom_vline(data = dat %>% filter(Date %in% .date),
-             aes(xintercept = Confirmed), 
-             linetype = "dotted")+ 
-  geom_text(data = dat %>% filter(Date %in% .date),
-            aes(label = Date, y = Death + 5))+
-  theme_classic()
+  gg_cdplot(.date)
 ```
