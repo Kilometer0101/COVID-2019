@@ -106,20 +106,20 @@ dat %>%
 ```r
 dat_d <-
   dat %>% 
-  filter(Date %in% .date) %>% 
-  mutate(d_Conf = Confirmed - lag(Confirmed),
-         d_Death = Death - lag(Death))
+  mutate(d7_Death = Death - lag(Death, 7),
+         d7_Conf = Confirmed - lag(Confirmed, 7))
 
 dat_d %>%
-  select(Date, d_Conf, d_Death) %>% 
-  pivot_longer(cols = c(d_Conf, d_Death)) %>%
+  select(Date, d7_Conf, d7_Death) %>% 
+  pivot_longer(cols = c(d7_Conf, d7_Death)) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
   geom_point()+
   geom_path()+
   theme_bw()+
-  facet_wrap(~name, scales = "free", nrow = 1)
+  facet_wrap(~name, scales = "free", nrow = 1)+
+  theme(legend.position = "none")
 ```
 
 ![](Conf_Death_jp_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
