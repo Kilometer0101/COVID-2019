@@ -27,7 +27,8 @@ dat <-
          Area = str_remove(Area, ".csv"),
          Area = if_else(Area == "jp", "Japan", Area))
 
-dat %>% 
+g <-
+  dat %>% 
   ggplot()+
   aes(Confirmed, Death, color = Area)+
   geom_point()+
@@ -40,7 +41,47 @@ dat %>%
             hjust = 0)+
   scale_x_continuous(limits = c(0, 3000))+
   theme_bw()+
-theme(legend.position = "none")
+  theme(legend.position = "none")
+g
 ```
 
 ![](Conf_Death_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+
+
+```r
+g + 
+  facet_wrap(~Area)
+```
+
+![](Conf_Death_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+
+
+```r
+dat_week <-
+  dat %>% 
+  mutate(Date = ymd(Date)) %>% 
+  arrange(desc(Date)) %>% 
+  group_by(Area) %>% 
+  mutate(tag = if_else(Date == max(Date), 0, 1),
+         tag = cumsum(tag) %% 7)
+
+dat_week %>% 
+  ggplot()+
+  aes(Confirmed, Death, color = Area)+
+  geom_point()+
+  geom_path()+
+  geom_text(data = dat %>% 
+              group_by(Area) %>% 
+              filter(Death == max(Death) & 
+                       Confirmed == max(Confirmed)),
+            aes(label = Area, x = Confirmed + 20),
+            hjust = 0)+
+  geom_vline(data = dat_week %>% filter(tag == 0),
+             aes(xintercept = Confirmed), linetype = "dotted")+
+  scale_x_continuous(limits = c(0, 3000))+
+  theme_bw()+
+  theme(legend.position = "none")+
+  facet_wrap(~Area)
+```
+
+![](Conf_Death_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
