@@ -1,0 +1,106 @@
+---
+title: "PCR_test"
+author: "km"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: 
+  html_document:
+    keep_md: true
+---
+
+## link: [WHO Coronavirus disease (COVID-2019) situation reports](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/)
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 4)
+library(tidyverse)
+library(ggrepel)
+library(lubridate)
+library(DT)
+```
+
+```{r}
+dat_confdeath <-
+  "data/corona_world.csv" %>% 
+  read.csv(stringsAsFactors = F)
+
+dat_PCR <- 
+  "data/corona_PCR.csv" %>% 
+  read.csv(stringsAsFactors = F) %>% 
+  mutate_all(~str_remove(., ",")) %>% 
+  filter(!is.na(positive.1000)) %>% 
+  mutate_at(c(2, 3, 5, 6, 7), as.numeric)
+
+dat <-
+  dat_PCR %>% 
+  left_join(dat_confdeath %>% 
+              rename(Country = country) %>% 
+              mutate(Country = if_else(Country == "Kingdom of Denmark",
+                                       "Denmark", Country),
+                     Country = if_else(Country == "US",
+                                       "United States", Country),
+                     Country = if_else(Country == "UK",
+                                       "United Kingdom", Country),
+                     Country = if_else(Country == "Republic of Indonesia",
+                                       "Indonesia", Country)),
+            by = "Country") %>% 
+  filter(!is.na(death)) %>% 
+  filter(death > 0)
+
+.count <- "Japan"
+
+dat_g <-
+  dat %>% 
+  arrange(death/population) %>% 
+  mutate(Country = factor(Country, levels = .$Country)) %>% 
+  mutate(col = if_else(Country %in% .count, "red", "black")) %>% 
+  mutate(ratio = death/population) %>% 
+  filter(ratio >= 0.1)
+
+dat_g %>% 
+  filter(Country != "Italy") %>% 
+  ggplot()+
+  aes(ratio, test.million)+
+  geom_point()+
+  geom_point(data = dat_g %>% filter(Country == "Japan"),
+             color = "red")+
+  geom_text_repel(aes(label = Country))+
+  scale_x_continuous(limits = c(0, NA))+
+  theme_bw()+
+  ylab("PCR test/population[million]")+
+  xlab("death/population[million]")+
+  labs(caption = "death: as of 17 Mar 2020)
+       PCR test: Wikipedia, https://en.wikipedia.org/wiki/COVID-19_testing, accessed(19 Mar 2020)")
+
+
+dat_g %>% 
+  filter(Country %in% c("Japan", "United States", "Hungary")) %>% 
+  select(Country, Total, Positive, death, population, test.million, ratio) %>% 
+  rename(death.million = ratio)
+
+```
+
+```{r, eval = F, echo=F}
+dat_PCR %>% 
+  filter(test.million >= 0, test.million <= 300) %>% 
+  filter(Total >= 7500) %>% 
+  filter(Positive > 100) %>% 
+#  filter(Total > 10000, Total < 20000) %>% 
+  ggplot()+
+  aes(test.million, Positive/population)+
+  geom_point(# aes(size = test.million),
+             alpha = 0.5)+
+  geom_text_repel(aes(label = Country))+
+  theme_classic()
+
+#.count <- c("Japan", "United States", "United Kingdom",
+#            "Italy", "Spain", "France", "Netherlands",
+#            "South Korea", "China")
+
+
+dat_g %>% 
+  ggplot()+
+  aes(x = Country, y = test.million, fill = log(death/population))+
+  geom_bar(stat = "identity")+
+  coord_flip()+
+  theme(axis.text.y = element_text(color = dat_g$col))
+```
