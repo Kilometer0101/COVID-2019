@@ -17,12 +17,20 @@ library(tidyverse)
 library(ggrepel)
 library(lubridate)
 library(DT)
+
+.subtitle <- "As of 18 March 2020"
 ```
 
 ```{r}
 dat <- 
   "data/dat_cofdeath.csv" %>% 
-  read.csv(stringsAsFactors = F)
+  read.csv(stringsAsFactors = F) %>% 
+  group_by(Area) %>% 
+  mutate(Date = ymd(Date)) %>% 
+  arrange(desc(Date)) %>% 
+  ungroup()
+
+.xmax <- dat$Confirmed %>% max() %>% {. + 500}
 
 g <-
   dat %>% 
@@ -36,9 +44,10 @@ g <-
                        Confirmed == max(Confirmed)),
             aes(label = Area, x = Confirmed + 20),
             hjust = 0)+
-#  scale_x_continuous(limits = c(0, 3000))+
+  scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  labs(subtitle = .subtitle)
 g
 
 g_jp_G <-
@@ -55,9 +64,10 @@ g_jp_G <-
                        Confirmed == max(Confirmed)),
             aes(label = Area, x = Confirmed + 20),
             hjust = 0)+
-  scale_x_continuous(limits = c(0, 6500))+
+  scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  labs(subtitle = .subtitle)
 
 g_jp_G
 ```
@@ -89,10 +99,11 @@ dat_week %>%
             hjust = 0)+
   geom_vline(data = dat_week %>% filter(tag == 0),
              aes(xintercept = Confirmed), linetype = "dotted")+
-#  scale_x_continuous(limits = c(0, 3000))+
+  scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
   theme(legend.position = "none")+
-  facet_wrap(~Area)
+  facet_wrap(~Area)+
+  labs(subtitle = .subtitle)
 ```
 
 ```{r, fig.width=10, fig.height=4}
@@ -116,7 +127,8 @@ dat_week %>%
 #  scale_x_continuous(limits = c(0, 3000))+
   theme_bw()+
   theme(legend.position = "none")+
-  facet_wrap(~Area, scales = "free_x")
+  facet_wrap(~Area, scales = "free_x")+
+  labs(subtitle = .subtitle)
 ```
 
 ```{r}

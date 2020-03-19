@@ -17,7 +17,13 @@ output:
 ```r
 dat <- 
   "data/dat_cofdeath.csv" %>% 
-  read.csv(stringsAsFactors = F)
+  read.csv(stringsAsFactors = F) %>% 
+  group_by(Area) %>% 
+  mutate(Date = ymd(Date)) %>% 
+  arrange(desc(Date)) %>% 
+  ungroup()
+
+.xmax <- dat$Confirmed %>% max() %>% {. + 500}
 
 g <-
   dat %>% 
@@ -31,9 +37,10 @@ g <-
                        Confirmed == max(Confirmed)),
             aes(label = Area, x = Confirmed + 20),
             hjust = 0)+
-#  scale_x_continuous(limits = c(0, 3000))+
+  scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  labs(subtitle = .subtitle)
 g
 ```
 
@@ -54,9 +61,10 @@ g_jp_G <-
                        Confirmed == max(Confirmed)),
             aes(label = Area, x = Confirmed + 20),
             hjust = 0)+
-  scale_x_continuous(limits = c(0, 6500))+
+  scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  labs(subtitle = .subtitle)
 
 g_jp_G
 ```
@@ -94,10 +102,11 @@ dat_week %>%
             hjust = 0)+
   geom_vline(data = dat_week %>% filter(tag == 0),
              aes(xintercept = Confirmed), linetype = "dotted")+
-#  scale_x_continuous(limits = c(0, 3000))+
+  scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
   theme(legend.position = "none")+
-  facet_wrap(~Area)
+  facet_wrap(~Area)+
+  labs(subtitle = .subtitle)
 ```
 
 ![](Conf_Death_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -124,7 +133,8 @@ dat_week %>%
 #  scale_x_continuous(limits = c(0, 3000))+
   theme_bw()+
   theme(legend.position = "none")+
-  facet_wrap(~Area, scales = "free_x")
+  facet_wrap(~Area, scales = "free_x")+
+  labs(subtitle = .subtitle)
 ```
 
 ![](Conf_Death_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
@@ -145,16 +155,16 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -0.6577 -0.4668 -0.2162  0.2270  1.1412 
+## -1.7725 -0.4460 -0.3228  0.5711  1.9762 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -0.6756102  0.5602100  -1.206    0.273    
-## Confirmed    0.0023841  0.0001631  14.617 6.44e-06 ***
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 0.112645   0.768208   0.147    0.888    
+## Confirmed   0.002049   0.000191  10.725 1.35e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.7634 on 6 degrees of freedom
-## Multiple R-squared:  0.9727,	Adjusted R-squared:  0.9681 
-## F-statistic: 213.7 on 1 and 6 DF,  p-value: 6.436e-06
+## Residual standard error: 1.165 on 7 degrees of freedom
+## Multiple R-squared:  0.9426,	Adjusted R-squared:  0.9344 
+## F-statistic:   115 on 1 and 7 DF,  p-value: 1.346e-05
 ```
