@@ -29,8 +29,15 @@ output:
 SARS-CoV-2肺炎の初期段階での経験から、SARS-CoV-2肺炎症例の早期発見と分離のためには、胸部X線撮影よりも渡航歴が最も重要であることが強く強調されている[Kim et al., J Korean Med Sci, 35 (2020)](https://synapse.koreamed.org/DOIx.php?id=10.3346/jkms.2020.35.e61)。
 
 
-### Hung, C. et al., Lancet, Jan 24 2020 [Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930183-5)
+### [Hung, C. et al., "Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China", Lancet, 24 Jan 2020](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930183-5)
 
+> By  Jan 2, 2020, 41 admitted hospital patients had been identified as having laboratory-confirmed 2019-nCoVinfection.
+
+2020年1月2日までに、41人の入院患者が検査室で確認された2019-nCoV感染症を有していることが確認された。
+
+> In this  cohort,  most  patients  presented  with  fever,  dry  cough, dyspnoea, and bilateral ground-glass opacities on chest  CT  scans.
+
+このコホートでは、大部分の患者が熱・乾性咳・呼吸困難・およびCTスキャン像における両側スリガラス陰影が認められた。
 
 [Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
