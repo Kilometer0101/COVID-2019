@@ -41,6 +41,10 @@ SARS-CoV-2肺炎の初期段階での経験から、SARS-CoV-2肺炎症例の早
 
 このコホートでは、大部分の患者が熱・乾性咳・呼吸困難・およびCTスキャン像における両側スリガラス陰影が認められた。
 
+> Our  study  has  some  limitations. ...This  is  a  modest-sized  case  series  of  patients  admitted  to  hospital;  collection  of  standardised  data  for  a  larger  cohort  would  help  to  further  define  the  clinical  presentation,  natural  history,  and  risk  factors. 
+
+本研究にはいくつかの限界がある。...これは入院患者群の小規模な集団を対象としている。より大規模なコホートの標準化されたデータを集計することで、臨床的な特徴・自然経過・リスク要因についてさらなる解明に役立つだろう。
+
 [Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
 [Articleswww.thelancet.com Vol 395   February 15, 2020507Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930211-7)
