@@ -1,13 +1,17 @@
 ---
 title: "References"
 author: "km"
-date: "2020/03/19"
+date: "2020/03/21"
 output: 
   html_document:
     keep_md: true
 ---
 
 
+
+[Coronavirus disease (COVID-2019) situation reports (WHO)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports)
+
+[報道発表一覧(厚労省)](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html)
 
 [COVID-19 testing](https://en.wikipedia.org/wiki/COVID-19_testing)
 
@@ -16,17 +20,25 @@ output:
 
 [クラスター対応戦略の概要（2020年3月10日暫定版）](https://www.jsph.jp/files/docments/COVID-19_031102.pdf)
 
-[Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
+### Lai, C. et al., Int. J. of Antimicrobial Agents, 12 Feb 2020  
+["Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and coronavirus disease-2019 (COVID-19): The epidemic and the challenges"](https://www.sciencedirect.com/science/article/pii/S0924857920300674)
+
+> 8. Infection control and prevention  
+> ... Experience from the early phase of SARS-CoV-2 pneumonia strongly highlighted that travel history, rather than chest radiography, is of paramount importance for early detection and isolation of SARS-CoV-2 pneumonia cases [41].
+
+SARS-CoV-2肺炎の初期段階での経験から、SARS-CoV-2肺炎症例の早期発見と分離のためには、胸部X線撮影よりも渡航歴が最も重要であることが強く強調されている[Kim et al., J Korean Med Sci, 35 (2020)](https://synapse.koreamed.org/DOIx.php?id=10.3346/jkms.2020.35.e61)。
+
+
+### Hung, C. et al., Lancet, Jan 24 2020
 [Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930183-5)
+
+
+[Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
 [Articleswww.thelancet.com Vol 395   February 15, 2020507Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930211-7)
 
 [Modeling the Transmission of Middle EastRespirator Syndrome Corona Virus in theRepublic of Korea](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4686901/pdf/pone.0144778.pdf)
-
-[Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and coronavirus disease-2019 (COVID-19): The epidemic and the challenges](https://www.sciencedirect.com/science/article/pii/S0924857920300674)
-
-[Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and coronavirus disease-2019 (COVID-19): The epidemic and the challenges](https://reader.elsevier.com/reader/sd/pii/S0924857920300674?token=5B593088E8959590E8BA048C895373C35FC483D7F6DDB5BA03E859EB3A3946733CDD804123A4FC4CB3A85499E173268E)
 
 [The basic reproduction number of novel coronavirus (2019-nCoV) estimation based on exponential growth in the early outbreak in China from 2019 to 2020: A reply to Dhungana](https://reader.elsevier.com/reader/sd/pii/S1201971220300837?token=E0088C2AE5B95A03FA8B88A143E44660CE2D842BB49C509B1C6F3E369D8E8DFDF46303E3483A903D507B6917CCBD624E)
 
