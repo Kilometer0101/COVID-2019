@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/03/20"
+date: "2020/03/21"
 output: 
   html_document:
     keep_md: true
@@ -25,18 +25,20 @@ dat <-
   "data/corona_conf_death_jp.csv" %>% 
   read.csv(stringsAsFactors = F) %>% 
   filter(!is.na(Confirmed)) %>% 
-  mutate(Date = ymd(Date))
+  mutate(Date = ymd(Date)) %>% 
+  mutate(from = if_else(Date <= "2020-03-17",
+                        "WHO", "JP Ministry"))
 ```
 
 
 ```
-##          Date Confirmed Death
-## 55 2020-03-14       716    21
-## 56 2020-03-15       780    22
-## 57 2020-03-16       814    24
-## 58 2020-03-17       829    28
-## 59 2020-03-18       872    29
-## 60 2020-03-19       914    31
+##          Date Confirmed Death        from
+## 56 2020-03-15       780    22         WHO
+## 57 2020-03-16       814    24         WHO
+## 58 2020-03-17       829    28         WHO
+## 59 2020-03-18       872    29 JP Ministry
+## 60 2020-03-19       914    31 JP Ministry
+## 61 2020-03-20       950    33 JP Ministry
 ```
 
 
@@ -47,14 +49,20 @@ gg_cdplot <-
       ggplot()+
       aes(Confirmed, Death)+
       geom_path()+
-      geom_point()+
+      geom_point(aes(shape = from))+
       geom_vline(data = dat %>% filter(Date %in% .date),
                  aes(xintercept = Confirmed), 
                  linetype = "dotted")+ 
       geom_text(data = dat %>% filter(Date %in% .date),
-                aes(label = Date, y = Death + 5))+
+                aes(label = Date, y = Death + 10))+
       theme_classic()+
-  labs(subtitle = .subtitle)
+  labs(subtitle = .subtitle,
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
+       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")+
+  xlab("Total Confiremed")+
+  ylab("Total Death")+
+      theme(legend.title = element_blank(),
+            legend.position = c(0.9, 0.15))
   }
 ```
 
@@ -107,12 +115,12 @@ dat %>%
 ```r
 dat_d <-
   dat %>% 
-  mutate(d7_Death = Death - lag(Death, 7),
-         d7_Conf = Confirmed - lag(Confirmed, 7))
+  mutate(weekly_Death = Death - lag(Death, 7),
+         weekly_Confirmed = Confirmed - lag(Confirmed, 7))
 
 dat_d %>%
-  select(Date, d7_Conf, d7_Death) %>% 
-  pivot_longer(cols = c(d7_Conf, d7_Death)) %>%
+  select(Date, weekly_Death, weekly_Confirmed) %>% 
+  pivot_longer(cols = c(weekly_Confirmed, weekly_Death)) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
@@ -120,7 +128,12 @@ dat_d %>%
   geom_path()+
   theme_bw()+
   facet_wrap(~name, scales = "free", nrow = 1)+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  xlab("Date")+
+  ylab("Weekly total value")+
+  labs(subtitle = .subtitle,
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
+       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")
 ```
 
 ![](Conf_Death_jp_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
@@ -140,18 +153,18 @@ dat %>%
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -1.69604 -0.20922  0.03854  0.38765  1.60775 
+## -1.68955 -0.06260 -0.03198  0.25150  1.61601 
 ## 
 ## Coefficients:
 ##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -19.223186   1.363244  -14.10 6.32e-08 ***
-## Confirmed     0.055025   0.001938   28.39 6.83e-11 ***
+## (Intercept) -19.201502   1.207119  -15.91 6.13e-09 ***
+## Confirmed     0.054989   0.001664   33.05 2.33e-12 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.014 on 10 degrees of freedom
-## Multiple R-squared:  0.9877,	Adjusted R-squared:  0.9865 
-## F-statistic: 806.3 on 1 and 10 DF,  p-value: 6.826e-11
+## Residual standard error: 0.9667 on 11 degrees of freedom
+## Multiple R-squared:   0.99,	Adjusted R-squared:  0.9891 
+## F-statistic:  1092 on 1 and 11 DF,  p-value: 2.326e-12
 ```
 
 ```r

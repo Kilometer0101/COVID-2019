@@ -18,7 +18,7 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 
-.subtitle <- "As of 18 March 2020"
+.subtitle <- "As of 19 March 2020"
 ```
 
 ```{r}

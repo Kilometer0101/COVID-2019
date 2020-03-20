@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death"
 author: "km"
-date: "2020/03/19"
+date: "2020/03/20"
 output: 
   html_document:
     keep_md: true
@@ -155,16 +155,16 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -1.7725 -0.4460 -0.3228  0.5711  1.9762 
+## -2.2820 -0.8070 -0.3500  0.8413  2.6265 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 0.112645   0.768208   0.147    0.888    
-## Confirmed   0.002049   0.000191  10.725 1.35e-05 ***
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 0.8659422  0.9245038   0.937    0.376    
+## Confirmed   0.0017585  0.0002004   8.774 2.23e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.165 on 7 degrees of freedom
-## Multiple R-squared:  0.9426,	Adjusted R-squared:  0.9344 
-## F-statistic:   115 on 1 and 7 DF,  p-value: 1.346e-05
+## Residual standard error: 1.517 on 8 degrees of freedom
+## Multiple R-squared:  0.9059,	Adjusted R-squared:  0.8941 
+## F-statistic: 76.99 on 1 and 8 DF,  p-value: 2.233e-05
 ```

@@ -31,7 +31,9 @@ dat <-
   "data/corona_conf_death_jp.csv" %>% 
   read.csv(stringsAsFactors = F) %>% 
   filter(!is.na(Confirmed)) %>% 
-  mutate(Date = ymd(Date))
+  mutate(Date = ymd(Date)) %>% 
+  mutate(from = if_else(Date <= "2020-03-17",
+                        "WHO", "JP Ministry"))
 ```
 
 ```{r, echo=F}
@@ -45,14 +47,20 @@ gg_cdplot <-
       ggplot()+
       aes(Confirmed, Death)+
       geom_path()+
-      geom_point()+
+      geom_point(aes(shape = from))+
       geom_vline(data = dat %>% filter(Date %in% .date),
                  aes(xintercept = Confirmed), 
                  linetype = "dotted")+ 
       geom_text(data = dat %>% filter(Date %in% .date),
-                aes(label = Date, y = Death + 5))+
+                aes(label = Date, y = Death + 10))+
       theme_classic()+
-  labs(subtitle = .subtitle)
+  labs(subtitle = .subtitle,
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
+       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")+
+  xlab("Total Confiremed")+
+  ylab("Total Death")+
+      theme(legend.title = element_blank(),
+            legend.position = c(0.9, 0.15))
   }
 ```
 
@@ -94,12 +102,12 @@ dat %>%
 ```{r, fig.width=8, fig.height=3}
 dat_d <-
   dat %>% 
-  mutate(d7_Death = Death - lag(Death, 7),
-         d7_Conf = Confirmed - lag(Confirmed, 7))
+  mutate(weekly_Death = Death - lag(Death, 7),
+         weekly_Confirmed = Confirmed - lag(Confirmed, 7))
 
 dat_d %>%
-  select(Date, d7_Conf, d7_Death) %>% 
-  pivot_longer(cols = c(d7_Conf, d7_Death)) %>%
+  select(Date, weekly_Death, weekly_Confirmed) %>% 
+  pivot_longer(cols = c(weekly_Confirmed, weekly_Death)) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
@@ -107,7 +115,12 @@ dat_d %>%
   geom_path()+
   theme_bw()+
   facet_wrap(~name, scales = "free", nrow = 1)+
-  theme(legend.position = "none")
+  theme(legend.position = "none")+
+  xlab("Date")+
+  ylab("Weekly total value")+
+  labs(subtitle = .subtitle,
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
+       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")
 ```
 
 ```{r}
