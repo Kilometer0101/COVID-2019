@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/03/18"
+date: "2020/03/20"
 output: 
   html_document:
     keep_md: true
@@ -31,12 +31,12 @@ dat <-
 
 ```
 ##          Date Confirmed Death
-## 54 2020-03-13       675    19
 ## 55 2020-03-14       716    21
 ## 56 2020-03-15       780    22
 ## 57 2020-03-16       814    24
 ## 58 2020-03-17       829    28
 ## 59 2020-03-18       872    29
+## 60 2020-03-19       914    31
 ```
 
 
@@ -53,7 +53,8 @@ gg_cdplot <-
                  linetype = "dotted")+ 
       geom_text(data = dat %>% filter(Date %in% .date),
                 aes(label = Date, y = Death + 5))+
-      theme_classic()
+      theme_classic()+
+  labs(subtitle = .subtitle)
   }
 ```
 
@@ -138,19 +139,19 @@ dat %>%
 ## lm(formula = Death ~ Confirmed, data = .)
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -1.7113 -0.3374  0.1053  0.5172  1.5886 
+##      Min       1Q   Median       3Q      Max 
+## -1.69604 -0.20922  0.03854  0.38765  1.60775 
 ## 
 ## Coefficients:
 ##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -19.269478   1.560164  -12.35 6.02e-07 ***
-## Confirmed     0.055104   0.002291   24.06 1.77e-09 ***
+## (Intercept) -19.223186   1.363244  -14.10 6.32e-08 ***
+## Confirmed     0.055025   0.001938   28.39 6.83e-11 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.068 on 9 degrees of freedom
-## Multiple R-squared:  0.9847,	Adjusted R-squared:  0.983 
-## F-statistic: 578.7 on 1 and 9 DF,  p-value: 1.771e-09
+## Residual standard error: 1.014 on 10 degrees of freedom
+## Multiple R-squared:  0.9877,	Adjusted R-squared:  0.9865 
+## F-statistic: 806.3 on 1 and 10 DF,  p-value: 6.826e-11
 ```
 
 ```r

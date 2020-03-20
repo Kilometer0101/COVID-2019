@@ -16,6 +16,8 @@ library(tidyverse)
 library(ggrepel)
 library(lubridate)
 library(DT)
+
+.subtitle <- "As of 19 March 2020"
 ```
 
 ```{r, eval = F}
@@ -49,7 +51,8 @@ gg_cdplot <-
                  linetype = "dotted")+ 
       geom_text(data = dat %>% filter(Date %in% .date),
                 aes(label = Date, y = Death + 5))+
-      theme_classic()
+      theme_classic()+
+  labs(subtitle = .subtitle)
   }
 ```
 
