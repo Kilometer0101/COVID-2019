@@ -63,6 +63,24 @@ SARS-CoV-2肺炎の初期段階での経験から、SARS-CoV-2肺炎症例の早
 
 X線・CTスキャン像では74例(75%)の患者において両側性肺炎が認められ、片側性肺炎は14例(14%)であった。14例(14%)の患者では複数オン斑状の浸潤影とスリガラス陰影が認められた。これに加え、1例(1%)では気胸が発生した。
 
+### [Wang, D. et al., "Clinical Characteristics of 138 Hospitalized Patients With 2019 Novel Coronavirus–Infected Pneumonia in Wuhan, China", JAMA, 7 Feb 2020](https://jamanetwork.com/journals/jama/fullarticle/2761044)
+
+>  In this single-center case series involving 138 patients with NCIP, 26% of patients required admission to the intensive care unit and 4.3% died.
+
+この症例群には単施設(武漢大学中南病院)における患者138人が含まれ、26％の患者が集中治療室への入院を必要とし、4.3％が死亡した。
+
+> Hospital-associated transmission was suspected as the presumed mechanism of infection for affected health professionals (40 [29%]) and hospitalized patients (17 [12.3%]).
+
+医療従事者40例(29%)と入院患者17例(12.3%)について推定される感染経路は院内感染が疑われる。
+
+> Chest computed tomographic scans showed bilateral patchy shadows or ground glass opacity in the lungs of all patients.
+
+CTスキャン像では全ての患者において両側肺の斑状影もしくはスリガラス陰影が認められた。
+
+> Huang et al first reported 41 cases of NCIP in which most patients had a history of exposure to Huanan Seafood Wholesale Market. ...Subsequently, Chen et al reported findings from 99 cases of NCIP from the same hospital and the results suggested that the 2019-nCoV infection clustered within groups of humans in close contact, was more likely to affect older men with comorbidities, and could result in ARDS
+
+Huangらの最初の41例の報告ではほとんどの患者が黄南海鮮卸売市場に暴露された経験を持っていた。その後のChenらの99例の単一病院における報告では、2019-nCoV感染は濃厚接触したグループにおいて**クラスタ化**されており、併存疾患を持つ高齢男性に対して影響を与えやすく、それがARDS(急性呼吸窮迫症候群)を引き起こす可能性があるとされる。
+
 [Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
 [Articleswww.thelancet.com Vol 395   February 15, 2020507Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930211-7)
