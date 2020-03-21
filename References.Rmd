@@ -37,6 +37,10 @@ SARS-CoV-2肺炎の初期段階での経験から、SARS-CoV-2肺炎症例の早
 
 2020年1月2日までに、41人の入院患者が検査室で確認された2019-nCoV感染症を有していることが確認された。
 
+> 27 (66%) of 41 patients had a history of direct exposure to the Huanan seafood market. 
+
+41人のうち27例(66%)では武漢華南海鮮卸売市場における直接的な暴露履歴があった。
+
 > In this  cohort,  most  patients  presented  with  fever,  dry  cough, dyspnoea, and bilateral ground-glass opacities on chest  CT  scans.
 
 このコホートでは、大部分の患者が熱・乾性咳・呼吸困難・およびCTスキャン像における両側スリガラス陰影が認められた。
@@ -44,8 +48,6 @@ SARS-CoV-2肺炎の初期段階での経験から、SARS-CoV-2肺炎症例の早
 > Our  study  has  some  limitations. ...This  is  a  modest-sized  case  series  of  patients  admitted  to  hospital;  collection  of  standardised  data  for  a  larger  cohort  would  help  to  further  define  the  clinical  presentation,  natural  history,  and  risk  factors. 
 
 本研究にはいくつかの限界がある。...これは入院患者群の小規模な集団を対象としている。より大規模なコホートの標準化されたデータを集計することで、臨床的な特徴・自然経過・リスク要因についてさらなる解明に役立つだろう。
-
-※ 「クラスター感染」に関する言及はない。
 
 ※ PCR検査の詳細
 
