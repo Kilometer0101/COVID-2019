@@ -18,7 +18,7 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 
-.subtitle <- "As of 19 March 2020"
+.subtitle <- "As of 20 March 2020"
 ```
 
 ```{r}
@@ -47,7 +47,9 @@ g <-
   scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
   theme(legend.position = "none")+
-  labs(subtitle = .subtitle)
+  labs(subtitle = .subtitle)+
+  xlab("Total Confirmed")+
+  ylab("Total Death")
 g
 
 g_jp_G <-

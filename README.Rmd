@@ -111,9 +111,15 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 このモデルを用いて、流行拡大率、流行倍増時間、および基本再生数（R0）を導出した。これは、感染していない集団において、1つの症例が感染期間中に平均して発生する追加症例数として定義される。
 
+> We fitted a gamma distribution to data from cluster investigations to estimate the serial interval distribution, defined as the delay between illness onset dates in successive cases in chains of transmission.
+
 > We obtained information on 5 clusters of cases, shown in Figure 3. On the basis of the dates of illness onset of 6 pairs of cases in these clusters, we estimated that the serial interval distribution had a mean (±SD) of 7.5±3.4 days (95% CI, 5.3 to 19) (Figure 2B).
 
+![](https://www.nejm.org/na101/home/literatum/publisher/mms/journals/content/nejm/0/nejm.ahead-of-print/nejmoa2001316/20200131/images/img_xlarge/nejmoa2001316_f3.jpeg)
+
 > Fig.3: Detailed Information on Exposures and Dates of Illness Onset in Five Clusters Including 16 Cases.
+
+※ ここで「clusters」は、図の通り、連続的に感染が伝播したと認められる群という意味で使われていることに注意。
 
 > In the epidemic curve up to January 4, 2020, the epidemic growth rate was 0.10 per day (95% CI, 0.050 to 0.16) and the doubling time was 7.4 days (95% CI, 4.2 to 14). Using the serial interval distribution above, we estimated that R0 was 2.2 (95% CI, 1.4 to 3.9).
 
@@ -139,3 +145,5 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 [Investigation of three clusters of COVID-19 in Singapore: implications for surveillance and response measures](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930528-6)
 
+
+[Guidelines for Investigating Clusters of Health Events (CDC)](https://www.cdc.gov/mmwr/preview/mmwrhtml/00001797.htm)

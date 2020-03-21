@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death"
 author: "km"
-date: "2020/03/20"
+date: "2020/03/21"
 output: 
   html_document:
     keep_md: true
@@ -40,7 +40,9 @@ g <-
   scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
   theme(legend.position = "none")+
-  labs(subtitle = .subtitle)
+  labs(subtitle = .subtitle)+
+  xlab("Total Confirmed")+
+  ylab("Total Death")
 g
 ```
 
@@ -155,16 +157,16 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -2.2820 -0.8070 -0.3500  0.8413  2.6265 
+## -2.2162 -0.7682 -0.2513  0.7138  2.6487 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 0.8659422  0.9245038   0.937    0.376    
-## Confirmed   0.0017585  0.0002004   8.774 2.23e-05 ***
+## (Intercept) 0.9065804  0.7784541   1.165    0.274    
+## Confirmed   0.0017455  0.0001413  12.351 6.02e-07 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.517 on 8 degrees of freedom
-## Multiple R-squared:  0.9059,	Adjusted R-squared:  0.8941 
-## F-statistic: 76.99 on 1 and 8 DF,  p-value: 2.233e-05
+## Residual standard error: 1.431 on 9 degrees of freedom
+## Multiple R-squared:  0.9443,	Adjusted R-squared:  0.9381 
+## F-statistic: 152.6 on 1 and 9 DF,  p-value: 6.02e-07
 ```
