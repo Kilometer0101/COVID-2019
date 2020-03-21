@@ -97,6 +97,26 @@ CTスキャン像では全ての患者において両側肺の斑状影もしく
 
 NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎と定義された：(1) 発熱（体温の履歴は有る場合と無い場合がある）、(2) 肺炎のX線写真的証拠、(3) 白血球数またはリンパ球数の低値または正常値、(4) 標準的な臨床ガイドラインに従った抗菌薬治療を3日間行っても症状が軽減しない。または上記の最初の3つの基準を満たし、かつ、黄南海鮮卸売市場との疫学的関連性を有するもしくは類似の症状を有する他の患者と接触した場合。
 
+> We estimated the epidemic growth rate by analyzing data on the cases with illness onset between December 10 and January 4, ...
+
+12 月 10 日から 1 月 4 日までの発症者のデータを解析し，流行の拡大率を推定した。
+
+> We fitted a transmission model (formulated with the use of renewal equations) with zoonotic infections to onset dates ...
+
+人獣共通感染症の伝播モデル（更新方程式を用いて定式化したもの）を発症日に当てはめた。
+
+> and we used this model to derive the epidemic growth rate, the epidemic doubling time, and the basic reproductive number (R0), which is defined as the expected number of additional cases that one case will generate, on average, over the course of its infectious period in an otherwise uninfected population. 
+
+このモデルを用いて、流行拡大率、流行倍増時間、および基本繁殖数（R0）を導出した。これは、感染していない集団において、1つの症例が感染期間中に平均して発生する追加症例数として定義される。
+
+> We obtained information on 5 clusters of cases, shown in Figure 3. On the basis of the dates of illness onset of 6 pairs of cases in these clusters, we estimated that the serial interval distribution had a mean (±SD) of 7.5±3.4 days (95% CI, 5.3 to 19) (Figure 2B).
+
+![](https://www.nejm.org/na101/home/literatum/publisher/mms/journals/content/nejm/0/nejm.ahead-of-print/nejmoa2001316/20200131/images/img_xlarge/nejmoa2001316_f3.jpeg){width=30%}
+
+> Fig.3: Detailed Information on Exposures and Dates of Illness Onset in Five Clusters Including 16 Cases.
+
+> In the epidemic curve up to January 4, 2020, the epidemic growth rate was 0.10 per day (95% CI, 0.050 to 0.16) and the doubling time was 7.4 days (95% CI, 4.2 to 14). Using the serial interval distribution above, we estimated that R0 was 2.2 (95% CI, 1.4 to 3.9).
+
 [Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
 [Articleswww.thelancet.com Vol 395   February 15, 2020507Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930211-7)
