@@ -49,15 +49,15 @@ SARS-CoV-2肺炎の初期段階での経験から、SARS-CoV-2肺炎症例の早
 
 >  The presence of 2019-nCoV in respiratory specimens was detected by next-generation sequencing or real-time RT-PCR methods. The primers  and  probe  target  to  envelope  gene  of  CoV  were  used  and  the  sequences  were  as  follows:  forward  primer  5′-ACTTCTTTTTCTTGCTTTCGTGGT-3′; reverse primer 5′-GCAGCAGTACGCACACAATC-3′;    and    the    probe    5′CY5-CTAGTTACACTAGCCATCCTTACTGC-3′BHQ1. 
 
-### [Chen, P. et al., "Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study", Lancet, 30 Jan 2020](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30211-7/fulltext)
+### [Chen, N. et al., "Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study", Lancet, 30 Jan 2020](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30211-7/fulltext)
 
 > we included all confirmed cases of 2019-nCoV in Wuhan Jinyintan Hospital from Jan 1 to Jan 20, 2020. 
 
 武漢金仁丹病院で 1 月 1 日から 2020 年 1 月 20 日までに確認された 2019-nCoV の全症例を対象とした。
 
-> 99 patients with 2019-nCoV were included in this study
+> 99 patients with 2019-nCoV were included in this study, two of whom were husband and wife. In total, 49 (49%) patients were clustered and had a history of exposure to the Huanan seafood market. 
 
-99人の2019-nCoV患者がこの研究の対象に含まれている。
+99人の2019-nCoV患者がこの研究の対象に含まれている。2組みの夫婦が含まれている。全例のうち49例(49%)は黄南海鮮市場での暴露歴を持っており**クラスタ化していた**。
 
 > According to chest x-ray and CT, 74 (75%) patients showed bilateral pneumonia (75%) with just 25 (25%) patients showing unilateral pneumonia (table 2). 14 (14%) patients showed multiple mottling and ground-glass opacity (table 2; figure). Additionally, pneumothorax occurred in one (1%) patient.
 
