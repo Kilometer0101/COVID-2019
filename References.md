@@ -75,13 +75,27 @@ X線・CTスキャン像では74例(75%)の患者において両側性肺炎が�
 
 医療従事者40例(29%)と入院患者17例(12.3%)について推定される感染経路は院内感染が疑われる。
 
+> Huang et al first reported 41 cases of NCIP in which most patients had a history of exposure to Huanan Seafood Wholesale Market. ...Subsequently, Chen et al reported findings from 99 cases of NCIP from the same hospital and the results suggested that the 2019-nCoV infection clustered within groups of humans in close contact, was more likely to affect older men with comorbidities, and could result in ARDS
+
+Huangらの最初の41例の報告ではほとんどの患者が黄南海鮮卸売市場に暴露された経験を持っていた。その後のChenらの99例の単一病院における報告では、2019-nCoV感染は濃厚接触したグループにおいて**クラスタ化**されており、併存疾患を持つ高齢男性に対して影響を与えやすく、それがARDS(急性呼吸窮迫症候群)を引き起こす可能性があるとされる。
+
+> The data in this study suggest rapid person-to-person transmission of 2019-nCoV may have occurred. The main reason is derived from the estimation of the basic reproductive number (R0) based on a previous study [15]. ... Based on the report, R0 from nCoV is 2.2, which estimated that, on average, each patient has been spreading infection to 2.2 other people[15].
+
+この研究のデータからは、ヒトからヒトへの急速な2019-nCoVの感染が生じた可能性が示唆される。主要な理由は先行研究において指摘された基本再生数(basic reproductive number, R0)に基づくと思われる。...この報告では、nCoVのR0は2.2と推定されている。この数値は、平均では、それぞれの患者は約2.2人に対して感染を広げることを意味する。 [Li Q et al., "Early transmission dynamics in Wuhan, China, of novel coronavirus-infected pneumonia", N Engl J Med, 29 Jan 2020](https://www.nejm.org/doi/10.1056/NEJMoa2001316)。
+
 > Chest computed tomographic scans showed bilateral patchy shadows or ground glass opacity in the lungs of all patients.
 
 CTスキャン像では全ての患者において両側肺の斑状影もしくはスリガラス陰影が認められた。
 
-> Huang et al first reported 41 cases of NCIP in which most patients had a history of exposure to Huanan Seafood Wholesale Market. ...Subsequently, Chen et al reported findings from 99 cases of NCIP from the same hospital and the results suggested that the 2019-nCoV infection clustered within groups of humans in close contact, was more likely to affect older men with comorbidities, and could result in ARDS
+### [Li Q et al., "Early transmission dynamics in Wuhan, China, of novel coronavirus-infected pneumonia", N Engl J Med, 29 Jan 2020](https://www.nejm.org/doi/10.1056/NEJMoa2001316)
 
-Huangらの最初の41例の報告ではほとんどの患者が黄南海鮮卸売市場に暴露された経験を持っていた。その後のChenらの99例の単一病院における報告では、2019-nCoV感染は濃厚接触したグループにおいて**クラスタ化**されており、併存疾患を持つ高齢男性に対して影響を与えやすく、それがARDS(急性呼吸窮迫症候群)を引き起こす可能性があるとされる。
+> The initial cases of novel coronavirus (2019-nCoV)–infected pneumonia (NCIP) occurred in Wuhan, Hubei Province, China, in December 2019 and January 2020. We analyzed data on the first 425 confirmed cases in Wuhan to determine the epidemiologic characteristics of NCIP.
+
+2019年12月と2020年1月に中国湖北省武漢で発生したNCIP(新規コロナウイルス（2019-nCoV）感染性肺炎)の初期症例。武漢で最初に確認された425例のデータを分析し、NCIPの疫学的特徴を明らかにした。
+
+> A suspected NCIP case was defined as a pneumonia that either fulfilled all the following four criteria — fever, with or without recorded temperature; radiographic evidence of pneumonia; low or normal white-cell count or low lymphocyte count; and no reduction in symptoms after antimicrobial treatment for 3 days, following standard clinical guidelines — or fulfilled the abovementioned first three criteria and had an epidemiologic link to the Huanan Seafood Wholesale Market or contact with other patients with similar symptoms.
+
+NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎と定義された：(1) 発熱（体温の履歴は有る場合と無い場合がある）、(2) 肺炎のX線写真的証拠、(3) 白血球数またはリンパ球数の低値または正常値、(4) 標準的な臨床ガイドラインに従った抗菌薬治療を3日間行っても症状が軽減しない。または上記の最初の3つの基準を満たし、かつ、黄南海鮮卸売市場との疫学的関連性を有するもしくは類似の症状を有する他の患者と接触した場合。
 
 [Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
