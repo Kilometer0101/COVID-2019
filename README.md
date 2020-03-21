@@ -111,8 +111,6 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 > We obtained information on 5 clusters of cases, shown in Figure 3. On the basis of the dates of illness onset of 6 pairs of cases in these clusters, we estimated that the serial interval distribution had a mean (±SD) of 7.5±3.4 days (95% CI, 5.3 to 19) (Figure 2B).
 
-![](https://www.nejm.org/na101/home/literatum/publisher/mms/journals/content/nejm/0/nejm.ahead-of-print/nejmoa2001316/20200131/images/img_xlarge/nejmoa2001316_f3.jpeg){width=30%}
-
 > Fig.3: Detailed Information on Exposures and Dates of Illness Onset in Five Clusters Including 16 Cases.
 
 > In the epidemic curve up to January 4, 2020, the epidemic growth rate was 0.10 per day (95% CI, 0.050 to 0.16) and the doubling time was 7.4 days (95% CI, 4.2 to 14). Using the serial interval distribution above, we estimated that R0 was 2.2 (95% CI, 1.4 to 3.9).
