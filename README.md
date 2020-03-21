@@ -1,15 +1,13 @@
 ---
-title: "README"
+title: "References"
 author: "km"
-date: "`r format(Sys.time(), '%Y/%m/%d')`"
+date: "2020/03/21"
 output: 
   html_document:
     keep_md: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 [Coronavirus disease (COVID-2019) situation reports (WHO)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports)
 
