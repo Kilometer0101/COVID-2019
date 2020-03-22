@@ -18,7 +18,7 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 
-.subtitle <- "As of 20 March 2020"
+.subtitle <- "As of 21 March 2020"
 ```
 
 ```{r}
@@ -32,13 +32,22 @@ dat <-
 
 .xmax <- dat$Confirmed %>% max() %>% {. + 500}
 
-g <-
-  dat %>% 
+```
+
+```{r}
+gg_confdeath <- function(dat, .exclude = NULL){
+  
+  dat_g <- dat %>%
+    filter(! Area %in% .exclude)
+
+  .xmax <- dat_g$Confirmed %>% max() %>% {. + 500}
+
+  dat_g %>% 
   ggplot()+
   aes(Confirmed, Death, color = Area)+
   geom_point()+
   geom_path()+
-  geom_text(data = dat %>% 
+  geom_text(data = dat_g %>% 
               group_by(Area) %>% 
               filter(Death == max(Death) & 
                        Confirmed == max(Confirmed)),
@@ -47,10 +56,25 @@ g <-
   scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
   theme(legend.position = "none")+
-  labs(subtitle = .subtitle)+
+  labs(subtitle = .subtitle,
+       caption = "WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports")+
   xlab("Total Confirmed")+
   ylab("Total Death")
+}
+```
+
+```{r}
+
+
+g <-
+  dat %>% 
+  gg_confdeath(c("US", "UK", "Netherlands"))
 g
+
+  dat %>% 
+  gg_confdeath(c("US", "Germany"))
+
+
 
 g_jp_G <-
   dat %>%

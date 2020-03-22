@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death"
 author: "km"
-date: "2020/03/21"
+date: "2020/03/22"
 output: 
   html_document:
     keep_md: true
@@ -24,14 +24,23 @@ dat <-
   ungroup()
 
 .xmax <- dat$Confirmed %>% max() %>% {. + 500}
+```
 
-g <-
-  dat %>% 
+
+```r
+gg_confdeath <- function(dat, .exclude = NULL){
+  
+  dat_g <- dat %>%
+    filter(! Area %in% .exclude)
+
+  .xmax <- dat_g$Confirmed %>% max() %>% {. + 500}
+
+  dat_g %>% 
   ggplot()+
   aes(Confirmed, Death, color = Area)+
   geom_point()+
   geom_path()+
-  geom_text(data = dat %>% 
+  geom_text(data = dat_g %>% 
               group_by(Area) %>% 
               filter(Death == max(Death) & 
                        Confirmed == max(Confirmed)),
@@ -40,13 +49,29 @@ g <-
   scale_x_continuous(limits = c(0, .xmax))+
   theme_bw()+
   theme(legend.position = "none")+
-  labs(subtitle = .subtitle)+
+  labs(subtitle = .subtitle,
+       caption = "WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports")+
   xlab("Total Confirmed")+
   ylab("Total Death")
+}
+```
+
+
+```r
+g <-
+  dat %>% 
+  gg_confdeath(c("US", "UK", "Netherlands"))
 g
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
+```r
+  dat %>% 
+  gg_confdeath(c("US", "Germany"))
+```
+
+![](Conf_Death_files/figure-html/unnamed-chunk-3-2.png)<!-- -->
 
 ```r
 g_jp_G <-
@@ -71,7 +96,7 @@ g_jp_G <-
 g_jp_G
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-1-2.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-3-3.png)<!-- -->
 
 
 ```r
@@ -79,7 +104,7 @@ g +
   facet_wrap(~Area)
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 
 ```r
@@ -111,7 +136,7 @@ dat_week %>%
   labs(subtitle = .subtitle)
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 
 ```r
@@ -139,7 +164,7 @@ dat_week %>%
   labs(subtitle = .subtitle)
 ```
 
-![](Conf_Death_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](Conf_Death_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 
 ```r
@@ -157,16 +182,16 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -2.2162 -0.7682 -0.2513  0.7138  2.6487 
+## -4.5916 -0.3872  0.4823  0.9418  4.1315 
 ## 
 ## Coefficients:
-##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 0.9065804  0.7784541   1.165    0.274    
-## Confirmed   0.0017455  0.0001413  12.351 6.02e-07 ***
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -1.2551613  1.1773731  -1.066    0.311    
+## Confirmed    0.0022989  0.0001576  14.585 4.58e-08 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.431 on 9 degrees of freedom
-## Multiple R-squared:  0.9443,	Adjusted R-squared:  0.9381 
-## F-statistic: 152.6 on 1 and 9 DF,  p-value: 6.02e-07
+## Residual standard error: 2.617 on 10 degrees of freedom
+## Multiple R-squared:  0.9551,	Adjusted R-squared:  0.9506 
+## F-statistic: 212.7 on 1 and 10 DF,  p-value: 4.578e-08
 ```
