@@ -1,13 +1,15 @@
 ---
 title: "README"
 author: "km"
-date: "2020/03/21"
+date: "2020/03/23"
 output: 
   html_document:
     keep_md: true
 ---
 
 
+
+[新型コロナウイルス感染症（COVID-19）のウイルス学的特徴と感染様式の考察 ](https://www.jmedj.co.jp/journal/paper/detail.php?id=14278&fbclid=IwAR23nWTK3V9eTEUYYQiKND6rSSsi5hPvcbjTuuoXNwgFyE2gWLg-sG6TPhw)
 
 [Coronavirus disease (COVID-2019) situation reports (WHO)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports)
 

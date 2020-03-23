@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death"
 author: "km"
-date: "2020/03/22"
+date: "2020/03/23"
 output: 
   html_document:
     keep_md: true
@@ -68,7 +68,7 @@ g
 
 ```r
   dat %>% 
-  gg_confdeath(c("US", "Germany"))
+  gg_confdeath(c("US", "Germany", "UK", "Netherlands"))
 ```
 
 ![](Conf_Death_files/figure-html/unnamed-chunk-3-2.png)<!-- -->
@@ -181,17 +181,17 @@ dat %>%
 ## lm(formula = Death ~ Confirmed, data = .)
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -4.5916 -0.3872  0.4823  0.9418  4.1315 
+##    Min     1Q Median     3Q    Max 
+## -7.698 -3.526  0.874  2.126  9.544 
 ## 
 ## Coefficients:
 ##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -1.2551613  1.1773731  -1.066    0.311    
-## Confirmed    0.0022989  0.0001576  14.585 4.58e-08 ***
+## (Intercept) -3.5818832  1.9757548  -1.813   0.0972 .  
+## Confirmed    0.0028439  0.0002119  13.421 3.65e-08 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.617 on 10 degrees of freedom
-## Multiple R-squared:  0.9551,	Adjusted R-squared:  0.9506 
-## F-statistic: 212.7 on 1 and 10 DF,  p-value: 4.578e-08
+## Residual standard error: 4.758 on 11 degrees of freedom
+## Multiple R-squared:  0.9424,	Adjusted R-squared:  0.9372 
+## F-statistic: 180.1 on 1 and 11 DF,  p-value: 3.654e-08
 ```

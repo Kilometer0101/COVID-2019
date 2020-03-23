@@ -72,7 +72,7 @@ g <-
 g
 
   dat %>% 
-  gg_confdeath(c("US", "Germany"))
+  gg_confdeath(c("US", "Germany", "UK", "Netherlands"))
 
 
 
