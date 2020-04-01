@@ -17,7 +17,7 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 
-.subtitle <- "As of 26 March 2020"
+.subtitle <- "As of 30 March 2020"
 ```
 
 ```{r, eval = F}
@@ -94,7 +94,9 @@ dat %>%
   filter(rowid %% 7 == 0) %>% 
   .$Date
 
-dat %>% 
+
+g1 <-
+  dat %>% 
   gg_cdplot(.date)+
   scale_x_continuous(limits = c(0, max(dat$Confirmed) + 15))
 ```
@@ -105,7 +107,8 @@ dat_d <-
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7))
 
-dat_d %>%
+g2 <-
+  dat_d %>%
   select(Date, weekly_Death, weekly_Confirmed) %>% 
   pivot_longer(cols = c(weekly_Confirmed, weekly_Death)) %>%
   filter(!is.na(value)) %>% 
@@ -121,6 +124,13 @@ dat_d %>%
   labs(subtitle = .subtitle,
        caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
        WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")
+```
+
+```{r, echo=F, fig.width=9, fig.height=7}
+
+library(patchwork)
+
+wrap_plots(g1, g2, nrow = 2, heights = c(2,1))
 ```
 
 ```{r}

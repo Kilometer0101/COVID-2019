@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/03/27"
+date: "2020/03/29"
 output: 
   html_document:
     keep_md: true
@@ -56,7 +56,7 @@ dat %>%
         axis.title.x = element_blank())+
   labs(caption = "https://stopcovid19.metro.tokyo.lg.jp/",
        subtitle = .subtitle,
-       y = "Confirmed N")
+       y = "Total Confirmed")
 ```
 
 ![](Tokyo_files/figure-html/unnamed-chunk-2-2.png)<!-- -->

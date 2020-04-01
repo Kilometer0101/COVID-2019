@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/03/27"
+date: "2020/03/31"
 output: 
   html_document:
     keep_md: true
@@ -33,12 +33,12 @@ dat <-
 
 ```
 ##          Date Confirmed Death        from
-## 62 2020-03-21      1007    35 JP Ministry
-## 63 2020-03-22      1046    36 JP Ministry
-## 64 2020-03-23      1089    41 JP Ministry
-## 65 2020-03-24      1128    42 JP Ministry
 ## 66 2020-03-25      1193    43 JP Ministry
 ## 67 2020-03-26      1292    45 JP Ministry
+## 68 2020-03-27      1387    46 JP Ministry
+## 69 2020-03-28      1499    49 JP Ministry
+## 70 2020-03-29      1693    52 JP Ministry
+## 71 2020-03-30      1953    56 JP Ministry
 ```
 
 
@@ -104,12 +104,12 @@ dat %>%
   filter(rowid %% 7 == 0) %>% 
   .$Date
 
-dat %>% 
+
+g1 <-
+  dat %>% 
   gg_cdplot(.date)+
   scale_x_continuous(limits = c(0, max(dat$Confirmed) + 15))
 ```
-
-![](Conf_Death_jp_files/figure-html/unnamed-chunk-5-3.png)<!-- -->
 
 
 ```r
@@ -118,7 +118,8 @@ dat_d <-
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7))
 
-dat_d %>%
+g2 <-
+  dat_d %>%
   select(Date, weekly_Death, weekly_Confirmed) %>% 
   pivot_longer(cols = c(weekly_Confirmed, weekly_Death)) %>%
   filter(!is.na(value)) %>% 
@@ -136,7 +137,12 @@ dat_d %>%
        WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")
 ```
 
-![](Conf_Death_jp_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+```
+## Warning in (function (..., na.rm = FALSE) : 引数は部分的に再利用されます
+```
+
+![](Conf_Death_jp_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 
 ```r
@@ -152,19 +158,19 @@ dat %>%
 ## lm(formula = Death ~ Confirmed, data = .)
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -4.0030 -0.8866 -0.1562  1.1124  2.3170 
+##      Min       1Q   Median       3Q      Max 
+## -10.1497  -2.9558   0.0831   3.0185   6.4438 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -16.071465   1.300021  -12.36 6.37e-10 ***
-## Confirmed     0.050367   0.001488   33.85  < 2e-16 ***
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -5.264711   2.462544  -2.138   0.0444 *  
+## Confirmed    0.036567   0.002346  15.590  5.1e-13 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.568 on 17 degrees of freedom
-## Multiple R-squared:  0.9854,	Adjusted R-squared:  0.9845 
-## F-statistic:  1146 on 1 and 17 DF,  p-value: < 2.2e-16
+## Residual standard error: 4.31 on 21 degrees of freedom
+## Multiple R-squared:  0.9205,	Adjusted R-squared:  0.9167 
+## F-statistic:   243 on 1 and 21 DF,  p-value: 5.103e-13
 ```
 
 ```r
