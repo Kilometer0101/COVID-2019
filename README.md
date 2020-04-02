@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/03/21"
+date: "2020/04/02"
 output: 
   html_document:
     keep_md: true
@@ -145,3 +145,5 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 
 [Guidelines for Investigating Clusters of Health Events (CDC)](https://www.cdc.gov/mmwr/preview/mmwrhtml/00001797.htm)
+
+[Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
