@@ -24,7 +24,8 @@ dat <-
   rename(date = 公表_年月日,
          age = 患者_年代) %>% 
   mutate(date = ymd(date)) %>% 
-  mutate(age = if_else(age == "", "不明", age))
+  mutate(age = if_else(age == "", "不明", age),
+         age = if_else(age == "-", "不明", age))
 
 dat_nest_age <-
   dat %>% 
@@ -86,3 +87,34 @@ dat_n %>%
 ```
 
 ![](Tokyo_files/figure-html/unnamed-chunk-2-2.png)<!-- -->
+
+
+```r
+.d <- {asof %>% dmy} - {"2020-01-24" %>% ymd}
+
+.date <- 
+  data.frame(x = seq(0, .d),
+             date = "2020-01-24" %>% ymd) %>% 
+  mutate(date = date + x)
+
+dat_n %>% 
+  select(age, date, n) %>% 
+  group_nest(age)
+```
+
+```
+## # A tibble: 11 x 2
+##    age      data             
+##    <chr>    <list>           
+##  1 10歳未満 <tibble [5 × 2]> 
+##  2 10代     <tibble [8 × 2]> 
+##  3 20代     <tibble [17 × 2]>
+##  4 30代     <tibble [23 × 2]>
+##  5 40代     <tibble [26 × 2]>
+##  6 50代     <tibble [28 × 2]>
+##  7 60代     <tibble [23 × 2]>
+##  8 70代     <tibble [27 × 2]>
+##  9 80代     <tibble [15 × 2]>
+## 10 90代     <tibble [7 × 2]> 
+## 11 不明     <tibble [3 × 2]>
+```

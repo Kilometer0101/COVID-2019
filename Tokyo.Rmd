@@ -15,7 +15,8 @@ library(lubridate)
 library(DT)
 library(data.table)
 
-.subtitle <- "As of 02 April 2020, Tokyo"
+asof <- "02 April 2020"
+.subtitle <- str_c("As of", asof,", Tokyo")
 ```
 
 ```{r}
@@ -31,7 +32,8 @@ dat <-
   rename(date = 公表_年月日,
          age = 患者_年代) %>% 
   mutate(date = ymd(date)) %>% 
-  mutate(age = if_else(age == "", "不明", age))
+  mutate(age = if_else(age == "", "不明", age),
+         age = if_else(age == "-", "不明", age))
 
 dat_nest_age <-
   dat %>% 
@@ -78,4 +80,17 @@ dat_n %>%
   labs(caption = "https://stopcovid19.metro.tokyo.lg.jp/",
        subtitle = .subtitle,
        y = "Total Confirmed")
+```
+
+```{r}
+.d <- {asof %>% dmy} - {"2020-01-24" %>% ymd}
+
+.date <- 
+  data.frame(x = seq(0, .d),
+             date = "2020-01-24" %>% ymd) %>% 
+  mutate(date = date + x)
+
+dat_n %>% 
+  select(age, date, n) %>% 
+  group_nest(age)
 ```
