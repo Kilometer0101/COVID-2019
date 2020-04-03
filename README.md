@@ -147,6 +147,19 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 [Guidelines for Investigating Clusters of Health Events (CDC)](https://www.cdc.gov/mmwr/preview/mmwrhtml/00001797.htm)
 
-[Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
+## ["Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection", Bernheim, A. et al., Radiology, Feb 20](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
+
+> In this study of 121 patients with confirmed Covid-19 infection, it is noteworthy that 20/36 (56%) of patients imaged 0-2 days (‘early’) after symptom onset had a normal CT with complete absence of ground-glass opacities and consolidation (as opposed to 3/33 [9%] of intermediate patients and 1/25 [4%] of late patients). 
+
+この研究では、COVID-19の感染が確認された121名を対象に行われた。症状発症後すぐ(0-2日, "初期")に撮影されたCT画像において20/36 (56%) の患者においてすりガラス陰影も浸潤影も観察され**なかった**ことは注目に値する（これは中期の患者の3/33(9%)、後期の患者の1/25(4%)にも当てはまった）。
+
+> Only one of these patients (who was in the early group) had an initially negative rRT-PCR result, suggesting that rRT-PCR is positive even in patients with normal chest CT. 
+
+このうちrRT-PCRで陰性だったのは初期グループに含まれるたった1人だった。すなわち胸部CTが正常な患者であってもrRT-PCRでは陽性だった。
+
+> Chest CT therefore has limited sensitivity and negative predictive value early after symptom onset, and is thereby unlikely a reliable standalone tool to rule out COVID-19 infection.
+
+従って、症状発症初期では胸部CTの感度と陰性予測能力には限界があり、従って、COVID19の感染を除外するための信頼に足る単独のツールとはいえない。
 
 [WITHDRAWN: Experimental Treatment with Favipiravir for COVID-19: An Open-Label Control Study](https://www.sciencedirect.com/science/article/pii/S2095809920300631) -> アビガンの臨床研究がWITHDRAW?
+
