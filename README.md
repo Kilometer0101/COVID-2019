@@ -149,6 +149,10 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 ## ["Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection", Bernheim, A. et al., Radiology, Feb 20](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
 
+>  Indeed, given the limited number of rRT-PCR kits in some centers and the possibility of false negative rRT-PCR results, the National Health Commission of the People’s Republic of China has encouraged diagnosis based on clinical and chest CT findings alone [28]. 
+
+実際、rRT-PCRキットの数が限られているため、rRT-PCRの結果が偽陰性になる可能性を考慮して、中国の国家衛生委員会は臨床初見と胸部CTのみに基づく診断を推奨している [National Health Commission of the People’s Republic of China website](www.en.nhc.gov/cn/2020-02/13/c_76515.htm)。
+
 > In this study of 121 patients with confirmed Covid-19 infection, it is noteworthy that 20/36 (56%) of patients imaged 0-2 days (‘early’) after symptom onset had a normal CT with complete absence of ground-glass opacities and consolidation (as opposed to 3/33 [9%] of intermediate patients and 1/25 [4%] of late patients). 
 
 この研究では、COVID-19の感染が確認された121名を対象に行われた。症状発症後すぐ(0-2日, "初期")に撮影されたCT画像において20/36 (56%) の患者においてすりガラス陰影も浸潤影も観察され**なかった**ことは注目に値する（これは中期の患者の3/33(9%)、後期の患者の1/25(4%)にも当てはまった）。
