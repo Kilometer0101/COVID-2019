@@ -171,9 +171,9 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 ## ["Closed environments facilitate secondary transmission of coronavirus disease 2019 (COVID-19)", Nishiura H. et al., medRxiv, 03 Mar](https://www.medrxiv.org/content/10.1101/2020.02.28.20029272v1)
 
-> As of 26 February 2020, we examined a total of 110 cases among eleven clusters and investigated who acquired infection from whom. 
+> As of 26 February 2020, we examined a total of 110 cases among eleven clusters and investigated who acquired infection from whom. The clusters included four in Tokyo and one each in Aichi, Fukuoka, Hokkaido, Ishikawa, Kanagawa and Wakayama prefectures. 
 
-2月26日時点で、11のクラスターに渡る110のケースを分析し、誰が誰から感染したのかを調査した。
+2月26日時点で、11のクラスターに渡る110のケースを分析し、誰が誰から感染したのかを調査した。そのクラスタには東京の4例、愛知・福岡・北海道・石川・神奈川・和歌山のそれぞれ1例が含まれていた。
 
 > All clusters were associated with close contact in indoor environments, including fitness gyms, a restaurant boat on a river, hospitals, and a snow festival where there were eating spaces in tents with minimal ventilation rate.
 
@@ -183,7 +183,7 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 それぞれの一次感染者による二次感染数は接触追跡データ (contact tracing data) から算出した。
 
->  Of the 110 cases examined, 27 (24.6%) were primary cases who generated secondary cases. Figure 1 shows the distribution of these transmissions .... The odds that a primary case transmitted COVID-19 in a closed environment was 18.7 times greater compared to an open-air environment
+>  Of the 110 cases examined, 27 (24.6%) were primary cases who generated secondary cases. Figure 1 shows the distribution of these transmissions of which the mean and variance were 0.6 cases and 2.5 cases2, respectively. The odds that a primary case transmitted COVID-19 in a closed environment was 18.7 times greater compared to an open-air environment
 
 
 110ケースにおいて、27例 (24.6%) は2次感染を生み出した一次感染者であった。図1はこれらの伝播の分布を示す...。一次感染者が閉鎖環境でCOVID-19を伝播したケースは、開放環境 (open-air env.) に比べて18.7倍であった。
