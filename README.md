@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/02"
+date: "2020/04/03"
 output: 
   html_document:
     keep_md: true
@@ -20,6 +20,7 @@ output:
 
 [クラスター対応戦略の概要（2020年3月10日暫定版）](https://www.jsph.jp/files/docments/COVID-19_031102.pdf)
 
+[山中伸弥による新型コロナウイルス情報発信](https://www.covid19-yamanaka.com/index.html)
 
 ### [Lai, C. et al., "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and coronavirus disease-2019 (COVID-19): The epidemic and the challenges", Int. J. of Antimicrobial Agents, 12 Feb 2020](https://www.sciencedirect.com/science/article/pii/S0924857920300674)
 
@@ -147,3 +148,5 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 [Guidelines for Investigating Clusters of Health Events (CDC)](https://www.cdc.gov/mmwr/preview/mmwrhtml/00001797.htm)
 
 [Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
+
+[WITHDRAWN: Experimental Treatment with Favipiravir for COVID-19: An Open-Label Control Study](https://www.sciencedirect.com/science/article/pii/S2095809920300631) -> アビガンの臨床研究がWITHDRAW?
