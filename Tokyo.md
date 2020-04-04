@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/04/02"
+date: "2020/04/04"
 output: 
   html_document:
     keep_md: true
@@ -78,14 +78,6 @@ dat_n %>%
        y = "Total Confirmed")
 ```
 
-```
-## Warning: Removed 1 rows containing missing values (geom_path).
-```
-
-```
-## Warning: Removed 1 rows containing missing values (geom_point).
-```
-
 ![](Tokyo_files/figure-html/unnamed-chunk-2-2.png)<!-- -->
 
 
@@ -97,24 +89,27 @@ dat_n %>%
              date = "2020-01-24" %>% ymd) %>% 
   mutate(date = date + x)
 
-dat_n %>% 
+dat_log <-
+  dat_n %>% 
   select(age, date, n) %>% 
-  group_nest(age)
+  group_nest(age) %>% 
+  map(data, ~left_join(.date, ., by = "date"))
 ```
 
 ```
-## # A tibble: 11 x 2
-##    age      data             
-##    <chr>    <list>           
-##  1 10歳未満 <tibble [5 × 2]> 
-##  2 10代     <tibble [8 × 2]> 
-##  3 20代     <tibble [17 × 2]>
-##  4 30代     <tibble [23 × 2]>
-##  5 40代     <tibble [26 × 2]>
-##  6 50代     <tibble [28 × 2]>
-##  7 60代     <tibble [23 × 2]>
-##  8 70代     <tibble [27 × 2]>
-##  9 80代     <tibble [15 × 2]>
-## 10 90代     <tibble [7 × 2]> 
-## 11 不明     <tibble [3 × 2]>
+## Warning in .f(.x[[i]], ...): data set '.x[[i]]' not found
+```
+
+```
+## Warning in .f(.x[[i]], ...): data set '~left_join(.date, ., by = "date")' not
+## found
+```
+
+```
+## Warning in .f(.x[[i]], ...): data set '.x[[i]]' not found
+```
+
+```
+## Warning in .f(.x[[i]], ...): data set '~left_join(.date, ., by = "date")' not
+## found
 ```

@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/04/02"
+date: "2020/04/03"
 output: 
   html_document:
     keep_md: true
@@ -33,12 +33,12 @@ dat <-
 
 ```
 ##          Date Confirmed Death        from
-## 69 2020-03-28      1499    49 JP Ministry
 ## 70 2020-03-29      1693    52 JP Ministry
 ## 71 2020-03-30      1866    54 JP Ministry
 ## 72 2020-03-31      1953    56 JP Ministry
 ## 73 2020-04-01      2178    57 JP Ministry
 ## 74 2020-04-02      2318    60 JP Ministry
+## 75 2020-04-03      2617    63 JP Ministry
 ```
 
 
@@ -158,19 +158,19 @@ dat %>%
 ## lm(formula = Death ~ Confirmed, data = .)
 ## 
 ## Residuals:
-##    Min     1Q Median     3Q    Max 
-## -9.228 -3.678  0.206  4.240  8.063 
+##      Min       1Q   Median       3Q      Max 
+## -11.0269  -4.9737   0.3532   4.6349   8.4388 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 0.779538   2.555825   0.305    0.763    
-## Confirmed   0.029529   0.002088  14.141 3.89e-13 ***
+## (Intercept) 3.008661   2.575395   1.168    0.254    
+## Confirmed   0.027137   0.001977  13.724 3.84e-13 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 5.505 on 24 degrees of freedom
-## Multiple R-squared:  0.8928,	Adjusted R-squared:  0.8884 
-## F-statistic:   200 on 1 and 24 DF,  p-value: 3.892e-13
+## Residual standard error: 5.978 on 25 degrees of freedom
+## Multiple R-squared:  0.8828,	Adjusted R-squared:  0.8781 
+## F-statistic: 188.3 on 1 and 25 DF,  p-value: 3.842e-13
 ```
 
 ```r

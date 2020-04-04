@@ -15,8 +15,8 @@ library(lubridate)
 library(DT)
 library(data.table)
 
-asof <- "02 April 2020"
-.subtitle <- str_c("As of", asof,", Tokyo")
+asof <- "04 April 2020"
+.subtitle <- str_c("As of ", asof,", Tokyo")
 ```
 
 ```{r}
@@ -90,7 +90,9 @@ dat_n %>%
              date = "2020-01-24" %>% ymd) %>% 
   mutate(date = date + x)
 
-dat_n %>% 
+dat_log <-
+  dat_n %>% 
   select(age, date, n) %>% 
-  group_nest(age)
+  group_nest(age) %>% 
+  map(data, ~left_join(.date, ., by = "date"))
 ```
