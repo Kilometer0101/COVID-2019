@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/04/04"
+date: "2020/04/05"
 output: 
   html_document:
     keep_md: true
@@ -11,9 +11,10 @@ output:
 
 
 ```r
-dat_raw <- "data" %>% 
-  list.files(full.names = TRUE) %>% 
-  str_subset("patients.csv") %>% 
+.url <- "https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv"
+
+dat_raw <- 
+  .url %>% 
   fread(data.table = F)
 ```
 
@@ -26,6 +27,14 @@ dat <-
   mutate(date = ymd(date)) %>% 
   mutate(age = if_else(age == "", "不明", age),
          age = if_else(age == "-", "不明", age))
+
+asof <- 
+  dat$date %>% 
+  max %>% 
+  as.character()
+
+.subtitle <- 
+  str_c("As of ", asof,", Tokyo")
 
 dat_nest_age <-
   dat %>% 
@@ -82,7 +91,7 @@ dat_n %>%
 
 
 ```r
-.d <- {asof %>% dmy} - {"2020-01-24" %>% ymd}
+.d <- {asof %>% ymd} - {"2020-01-24" %>% ymd}
 
 .date <- 
   data.frame(x = seq(0, .d),

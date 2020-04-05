@@ -33,12 +33,12 @@ dat <-
 
 ```
 ##          Date Confirmed Death        from
-## 71 2020-03-30      1866    54 JP Ministry
 ## 72 2020-03-31      1953    56 JP Ministry
 ## 73 2020-04-01      2178    57 JP Ministry
 ## 74 2020-04-02      2318    60 JP Ministry
 ## 75 2020-04-03      2617    63 JP Ministry
 ## 76 2020-04-04      2935    69 JP Ministry
+## 77 2020-04-05      3271    70 JP Ministry
 ```
 
 
@@ -159,18 +159,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -10.351  -3.881   1.966   4.731   8.676 
+## -12.599  -4.489   1.821   4.808   8.913 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 4.875333   2.514478   1.939   0.0634 .  
-## Confirmed   0.025221   0.001804  13.982 1.32e-13 ***
+## (Intercept) 7.025162   2.531470   2.775  0.00989 ** 
+## Confirmed   0.023104   0.001689  13.676 1.18e-13 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 6.29 on 26 degrees of freedom
-## Multiple R-squared:  0.8826,	Adjusted R-squared:  0.8781 
-## F-statistic: 195.5 on 1 and 26 DF,  p-value: 1.318e-13
+## Residual standard error: 6.797 on 27 degrees of freedom
+## Multiple R-squared:  0.8738,	Adjusted R-squared:  0.8692 
+## F-statistic:   187 on 1 and 27 DF,  p-value: 1.179e-13
 ```
 
 ```r
