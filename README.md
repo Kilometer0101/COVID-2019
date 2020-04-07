@@ -17,13 +17,18 @@ output:
 
 [code](Conf_Death_jp.md)
 
-## Data from Tokyo Prefecture
+[data.csv](data/corona_conf_death_jp.csv)
 
-![](./fig/fig_Tokyo.png)
+## Data from Tokyo Prefecture
 
 [東京都コロナウィルス感染症対策サイト](https://stopcovid19.metro.tokyo.lg.jp/)
 
+![](./fig/fig_Tokyo.png)
+
+
 [code](Tokyo.md)
+
+[data](data/130001_tokyo_covid19_patients.csv)
 
 ## Refs.
 
