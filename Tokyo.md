@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/04/07"
+date: "2020/04/08"
 output: 
   html_document:
     keep_md: true
@@ -91,6 +91,11 @@ g_age
 ```
 
 ![](Tokyo_files/figure-html/unnamed-chunk-2-2.png)<!-- -->
+
+```r
+ggsave("fig/fig_Tokyo.png", g_age,
+       width = 7, height = 4)
+```
 
 
 ```r

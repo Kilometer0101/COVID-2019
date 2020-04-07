@@ -145,6 +145,10 @@ g2 <-
 
 ![](Conf_Death_jp_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
+```
+## Warning in (function (..., na.rm = FALSE) : 引数は部分的に再利用されます
+```
+
 
 ```r
 g2+

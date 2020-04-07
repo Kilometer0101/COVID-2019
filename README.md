@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/03"
+date: "2020/04/08"
 output: 
   html_document:
     keep_md: true
@@ -9,9 +9,26 @@ output:
 
 
 
-[Coronavirus disease (COVID-2019) situation reports (WHO)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports)
+## Data from JP Ministry
 
 [報道発表一覧(厚労省)](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html)
+
+![](./fig/fig_Jp.png)
+
+[code](Conf_Death_jp.md)
+
+## Data from Tokyo Prefecture
+
+![](./fig/fig_Tokyo.png)
+
+[東京都コロナウィルス感染症対策サイト](https://stopcovid19.metro.tokyo.lg.jp/)
+
+[code](Tokyo.md)
+
+## Refs.
+
+[Coronavirus disease (COVID-2019) situation reports (WHO)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports)
+
 
 [COVID-19 testing](https://en.wikipedia.org/wiki/COVID-19_testing)
 

@@ -132,7 +132,12 @@ g2 <-
 
 library(patchwork)
 
-wrap_plots(g1, g2, nrow = 2, heights = c(2,3))
+wp <- 
+  wrap_plots(g1, g2, nrow = 2, heights = c(2,3))
+
+wp
+
+ggsave("fig/fig_Jp.png", wp, width = 9, height = 9)
 ```
 
 ```{r, fig.width=8, fig.height=3}

@@ -90,6 +90,9 @@ g_age <-
        y = "Total Confirmed")
 
 g_age
+
+ggsave("fig/fig_Tokyo.png", g_age,
+       width = 7, height = 4)
 ```
 
 ```{r}
