@@ -68,7 +68,8 @@ dat_n <-
 
 .xmin <- "2020-01-24" %>% ymd
 .xmax <- today() %>% ymd %>% {. + 10}
-dat_n %>% 
+g_age <-
+  dat_n %>% 
   ggplot()+
   aes(date, n, color = age)+
   geom_path()+
@@ -87,7 +88,19 @@ dat_n %>%
   labs(caption = "https://stopcovid19.metro.tokyo.lg.jp/",
        subtitle = .subtitle,
        y = "Total Confirmed")
+
+g_age
 ```
+
+```{r}
+g_age + 
+  geom_vline(xintercept = "2020-03-23" %>% ymd,
+             linetype = "dotted")+
+  geom_text(aes(label = "03-23"),
+            x = "2020-03-23" %>% ymd,
+            y = 100)
+```
+
 
 ```{r}
 .d <- {asof %>% ymd} - {"2020-01-24" %>% ymd}

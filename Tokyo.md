@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/04/05"
+date: "2020/04/07"
 output: 
   html_document:
     keep_md: true
@@ -66,7 +66,8 @@ dat_n <-
 
 .xmin <- "2020-01-24" %>% ymd
 .xmax <- today() %>% ymd %>% {. + 10}
-dat_n %>% 
+g_age <-
+  dat_n %>% 
   ggplot()+
   aes(date, n, color = age)+
   geom_path()+
@@ -85,9 +86,24 @@ dat_n %>%
   labs(caption = "https://stopcovid19.metro.tokyo.lg.jp/",
        subtitle = .subtitle,
        y = "Total Confirmed")
+
+g_age
 ```
 
 ![](Tokyo_files/figure-html/unnamed-chunk-2-2.png)<!-- -->
+
+
+```r
+g_age + 
+  geom_vline(xintercept = "2020-03-23" %>% ymd,
+             linetype = "dotted")+
+  geom_text(aes(label = "03-23"),
+            x = "2020-03-23" %>% ymd,
+            y = 100)
+```
+
+![](Tokyo_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
 
 
 ```r

@@ -16,8 +16,9 @@ library(tidyverse)
 library(ggrepel)
 library(lubridate)
 library(DT)
+library(data.table)
 
-.subtitle <- "As of 05 April 2020"
+.subtitle <- "As of 07 April 2020"
 ```
 
 ```{r, eval = F}
@@ -28,12 +29,12 @@ library(lubridate)
 
 ```{r}
 dat <- 
-  "data/corona_conf_death_jp.csv" %>% 
-  read.csv(stringsAsFactors = F) %>% 
+  "data/corona_jp.csv" %>% 
+  fread(data.table = F) %>% 
   filter(!is.na(Confirmed)) %>% 
-  mutate(Date = ymd(Date)) %>% 
-  mutate(from = if_else(Date <= "2020-03-17",
-                        "WHO", "JP Ministry"))
+  mutate(Date = ymd(Date)) %>%
+  arrange(Date) %>% 
+  mutate(from = "JP Ministry")
 ```
 
 ```{r, echo=F}
@@ -55,8 +56,7 @@ gg_cdplot <-
                 aes(label = Date, y = Death + 10))+
       theme_classic()+
   labs(subtitle = .subtitle,
-       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
-       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")+
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")+
   xlab("Total Confiremed")+
   ylab("Total Death")+
       theme(legend.title = element_blank(),
@@ -105,33 +105,45 @@ g1 <-
 dat_d <-
   dat %>% 
   mutate(weekly_Death = Death - lag(Death, 7),
-         weekly_Confirmed = Confirmed - lag(Confirmed, 7))
+         weekly_Confirmed = Confirmed - lag(Confirmed, 7),
+         weekly_Test = Test - lag(Test, 7),
+         weekly_psitive = weekly_Confirmed / weekly_Test)
 
 g2 <-
   dat_d %>%
-  select(Date, weekly_Death, weekly_Confirmed) %>% 
-  pivot_longer(cols = c(weekly_Confirmed, weekly_Death)) %>%
+  select(Date, weekly_Death, weekly_Confirmed, weekly_Test, weekly_psitive) %>% 
+  pivot_longer(cols = c(weekly_Confirmed, weekly_Death, weekly_Test, weekly_psitive)) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
   geom_point()+
   geom_path()+
   theme_bw()+
-  facet_wrap(~name, scales = "free", nrow = 1)+
+  facet_wrap(~name, scales = "free", nrow = 2)+
+  scale_y_continuous(limits = c(0, NA))+
   theme(legend.position = "none")+
   xlab("Date")+
   ylab("Weekly total value")+
   labs(subtitle = .subtitle,
-       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
-       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")
 ```
 
-```{r, echo=F, fig.width=9, fig.height=7}
+```{r, echo=F, fig.width=9, fig.height=9}
 
 library(patchwork)
 
-wrap_plots(g1, g2, nrow = 2, heights = c(2,1))
+wrap_plots(g1, g2, nrow = 2, heights = c(2,3))
 ```
+
+```{r, fig.width=8, fig.height=3}
+g2+
+  geom_vline(xintercept = c("2020-03-23") %>% ymd,
+             linetype = "dotted")+
+  geom_text(aes(label = "03-23",
+                x = "2020-03-23" %>% ymd,
+                y = 0))
+```
+
 
 ```{r}
 dat %>% 

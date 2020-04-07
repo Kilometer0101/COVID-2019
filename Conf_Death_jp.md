@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/04/05"
+date: "2020/04/08"
 output: 
   html_document:
     keep_md: true
@@ -22,23 +22,23 @@ library(lubridate)
 
 ```r
 dat <- 
-  "data/corona_conf_death_jp.csv" %>% 
-  read.csv(stringsAsFactors = F) %>% 
+  "data/corona_jp.csv" %>% 
+  fread(data.table = F) %>% 
   filter(!is.na(Confirmed)) %>% 
-  mutate(Date = ymd(Date)) %>% 
-  mutate(from = if_else(Date <= "2020-03-17",
-                        "WHO", "JP Ministry"))
+  mutate(Date = ymd(Date)) %>%
+  arrange(Date) %>% 
+  mutate(from = "JP Ministry")
 ```
 
 
 ```
-##          Date Confirmed Death        from
-## 72 2020-03-31      1953    56 JP Ministry
-## 73 2020-04-01      2178    57 JP Ministry
-## 74 2020-04-02      2318    60 JP Ministry
-## 75 2020-04-03      2617    63 JP Ministry
-## 76 2020-04-04      2935    69 JP Ministry
-## 77 2020-04-05      3271    70 JP Ministry
+##          Date Confirmed  Test Death comment        from
+## 51 2020-04-02      2381 34510    60         JP Ministry
+## 52 2020-04-03      2617 39446    63         JP Ministry
+## 53 2020-04-04      2935 42882    69         JP Ministry
+## 54 2020-04-05      3271 44639    70         JP Ministry
+## 55 2020-04-06      3654 46172    73         JP Ministry
+## 56 2020-04-07      3906 55311    80         JP Ministry
 ```
 
 
@@ -57,8 +57,7 @@ gg_cdplot <-
                 aes(label = Date, y = Death + 10))+
       theme_classic()+
   labs(subtitle = .subtitle,
-       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
-       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")+
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")+
   xlab("Total Confiremed")+
   ylab("Total Death")+
       theme(legend.title = element_blank(),
@@ -116,25 +115,27 @@ g1 <-
 dat_d <-
   dat %>% 
   mutate(weekly_Death = Death - lag(Death, 7),
-         weekly_Confirmed = Confirmed - lag(Confirmed, 7))
+         weekly_Confirmed = Confirmed - lag(Confirmed, 7),
+         weekly_Test = Test - lag(Test, 7),
+         weekly_psitive = weekly_Confirmed / weekly_Test)
 
 g2 <-
   dat_d %>%
-  select(Date, weekly_Death, weekly_Confirmed) %>% 
-  pivot_longer(cols = c(weekly_Confirmed, weekly_Death)) %>%
+  select(Date, weekly_Death, weekly_Confirmed, weekly_Test, weekly_psitive) %>% 
+  pivot_longer(cols = c(weekly_Confirmed, weekly_Death, weekly_Test, weekly_psitive)) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
   geom_point()+
   geom_path()+
   theme_bw()+
-  facet_wrap(~name, scales = "free", nrow = 1)+
+  facet_wrap(~name, scales = "free", nrow = 2)+
+  scale_y_continuous(limits = c(0, NA))+
   theme(legend.position = "none")+
   xlab("Date")+
   ylab("Weekly total value")+
   labs(subtitle = .subtitle,
-       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html
-       WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/")
+       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")
 ```
 
 
@@ -143,6 +144,19 @@ g2 <-
 ```
 
 ![](Conf_Death_jp_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+
+
+```r
+g2+
+  geom_vline(xintercept = c("2020-03-23") %>% ymd,
+             linetype = "dotted")+
+  geom_text(aes(label = "03-23",
+                x = "2020-03-23" %>% ymd,
+                y = 0))
+```
+
+![](Conf_Death_jp_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+
 
 
 ```r
@@ -159,18 +173,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -12.599  -4.489   1.821   4.808   8.913 
+## -13.409  -5.376   1.284   6.388   9.068 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 7.025162   2.531470   2.775  0.00989 ** 
-## Confirmed   0.023104   0.001689  13.676 1.18e-13 ***
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 10.300557   2.441382   4.219  0.00022 ***
+## Confirmed    0.020064   0.001403  14.305 1.13e-14 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 6.797 on 27 degrees of freedom
-## Multiple R-squared:  0.8738,	Adjusted R-squared:  0.8692 
-## F-statistic:   187 on 1 and 27 DF,  p-value: 1.179e-13
+## Residual standard error: 7.41 on 29 degrees of freedom
+## Multiple R-squared:  0.8759,	Adjusted R-squared:  0.8716 
+## F-statistic: 204.6 on 1 and 29 DF,  p-value: 1.134e-14
 ```
 
 ```r
