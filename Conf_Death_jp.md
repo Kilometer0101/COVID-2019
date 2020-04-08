@@ -33,12 +33,12 @@ dat <-
 
 ```
 ##          Date Confirmed  Test Death comment        from
-## 51 2020-04-02      2381 34510    60         JP Ministry
 ## 52 2020-04-03      2617 39446    63         JP Ministry
 ## 53 2020-04-04      2935 42882    69         JP Ministry
 ## 54 2020-04-05      3271 44639    70         JP Ministry
 ## 55 2020-04-06      3654 46172    73         JP Ministry
 ## 56 2020-04-07      3906 55311    80         JP Ministry
+## 57 2020-04-08      4257 61498    81         JP Ministry
 ```
 
 
@@ -117,12 +117,12 @@ dat_d <-
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7),
          weekly_Test = Test - lag(Test, 7),
-         weekly_psitive = weekly_Confirmed / weekly_Test)
+         weekly_positive = weekly_Confirmed / weekly_Test)
 
 g2 <-
   dat_d %>%
-  select(Date, weekly_Death, weekly_Confirmed, weekly_Test, weekly_psitive) %>% 
-  pivot_longer(cols = c(weekly_Confirmed, weekly_Death, weekly_Test, weekly_psitive)) %>%
+  select(Date, weekly_Death, weekly_Confirmed, weekly_Test, weekly_positive) %>% 
+  pivot_longer(cols = c(weekly_Confirmed, weekly_Death, weekly_Test, weekly_positive)) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
@@ -177,18 +177,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -13.409  -5.376   1.284   6.388   9.068 
+## -14.177  -5.398   1.843   7.167   9.057 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 10.300557   2.441382   4.219  0.00022 ***
-## Confirmed    0.020064   0.001403  14.305 1.13e-14 ***
+## (Intercept) 11.578461   2.403802   4.817 3.91e-05 ***
+## Confirmed    0.018940   0.001285  14.744 2.77e-15 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 7.41 on 29 degrees of freedom
-## Multiple R-squared:  0.8759,	Adjusted R-squared:  0.8716 
-## F-statistic: 204.6 on 1 and 29 DF,  p-value: 1.134e-14
+## Residual standard error: 7.653 on 30 degrees of freedom
+## Multiple R-squared:  0.8787,	Adjusted R-squared:  0.8747 
+## F-statistic: 217.4 on 1 and 30 DF,  p-value: 2.766e-15
 ```
 
 ```r

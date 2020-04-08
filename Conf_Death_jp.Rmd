@@ -18,7 +18,7 @@ library(lubridate)
 library(DT)
 library(data.table)
 
-.subtitle <- "As of 07 April 2020"
+.subtitle <- "As of 08 April 2020"
 ```
 
 ```{r, eval = F}
@@ -107,12 +107,12 @@ dat_d <-
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7),
          weekly_Test = Test - lag(Test, 7),
-         weekly_psitive = weekly_Confirmed / weekly_Test)
+         weekly_positive = weekly_Confirmed / weekly_Test)
 
 g2 <-
   dat_d %>%
-  select(Date, weekly_Death, weekly_Confirmed, weekly_Test, weekly_psitive) %>% 
-  pivot_longer(cols = c(weekly_Confirmed, weekly_Death, weekly_Test, weekly_psitive)) %>%
+  select(Date, weekly_Death, weekly_Confirmed, weekly_Test, weekly_positive) %>% 
+  pivot_longer(cols = c(weekly_Confirmed, weekly_Death, weekly_Test, weekly_positive)) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
