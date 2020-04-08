@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/08"
+date: "2020/04/09"
 output: 
   html_document:
     keep_md: true
@@ -136,7 +136,7 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 > We obtained information on 5 clusters of cases, shown in Figure 3. On the basis of the dates of illness onset of 6 pairs of cases in these clusters, we estimated that the serial interval distribution had a mean (±SD) of 7.5±3.4 days (95% CI, 5.3 to 19) (Figure 2B).
 
-![](https://www.nejm.org/na101/home/literatum/publisher/mms/journals/content/nejm/0/nejm.ahead-of-print/nejmoa2001316/20200131/images/img_xlarge/nejmoa2001316_f3.jpeg)
+![](https://www.nejm.org/na101/home/literatum/publisher/mms/journals/content/nejm/2020/nejm_2020.382.issue-13/nejmoa2001316/20200320/images/img_xlarge/nejmoa2001316_f3.jpeg)
 
 > Fig.3: Detailed Information on Exposures and Dates of Illness Onset in Five Clusters Including 16 Cases.
 
