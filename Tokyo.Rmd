@@ -14,7 +14,14 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 library(data.table)
+```
 
+```{r, eval = F}
+library(tidyverse)
+library(ggrepel)
+library(lubridate)
+library(DT)
+library(data.table)
 ```
 
 ```{r}
@@ -105,7 +112,7 @@ g_age +
 ```
 
 
-```{r}
+```{r, echo=F, eval =F}
 .d <- {asof %>% ymd} - {"2020-01-24" %>% ymd}
 
 .date <- 

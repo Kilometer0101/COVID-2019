@@ -1,13 +1,22 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/04/08"
+date: "2020/04/09"
 output: 
   html_document:
     keep_md: true
 ---
 
 
+
+
+```r
+library(tidyverse)
+library(ggrepel)
+library(lubridate)
+library(DT)
+library(data.table)
+```
 
 
 ```r
@@ -51,7 +60,7 @@ dat_nest_age %>%
        subtitle = .subtitle)
 ```
 
-![](Tokyo_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](Tokyo_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 ```r
 dat_n <-
@@ -90,7 +99,7 @@ g_age <-
 g_age
 ```
 
-![](Tokyo_files/figure-html/unnamed-chunk-2-2.png)<!-- -->
+![](Tokyo_files/figure-html/unnamed-chunk-3-2.png)<!-- -->
 
 ```r
 ggsave("fig/fig_Tokyo.png", g_age,
@@ -107,39 +116,7 @@ g_age +
             y = 100)
 ```
 
-![](Tokyo_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](Tokyo_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 
 
-```r
-.d <- {asof %>% ymd} - {"2020-01-24" %>% ymd}
-
-.date <- 
-  data.frame(x = seq(0, .d),
-             date = "2020-01-24" %>% ymd) %>% 
-  mutate(date = date + x)
-
-dat_log <-
-  dat_n %>% 
-  select(age, date, n) %>% 
-  group_nest(age) %>% 
-  map(data, ~left_join(.date, ., by = "date"))
-```
-
-```
-## Warning in .f(.x[[i]], ...): data set '.x[[i]]' not found
-```
-
-```
-## Warning in .f(.x[[i]], ...): data set '~left_join(.date, ., by = "date")' not
-## found
-```
-
-```
-## Warning in .f(.x[[i]], ...): data set '.x[[i]]' not found
-```
-
-```
-## Warning in .f(.x[[i]], ...): data set '~left_join(.date, ., by = "date")' not
-## found
-```

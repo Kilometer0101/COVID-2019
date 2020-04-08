@@ -17,14 +17,18 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 library(data.table)
-
-.subtitle <- "As of 08 April 2020"
 ```
 
 ```{r, eval = F}
 library(tidyverse)
 library(ggrepel)
 library(lubridate)
+library(DT)
+library(data.table)
+```
+
+```{r}
+.subtitle <- "As of 08 April 2020"
 ```
 
 ```{r}
@@ -55,17 +59,17 @@ gg_cdplot <-
       geom_text(data = dat %>% filter(Date %in% .date),
                 aes(label = Date, y = Death + 10))+
       theme_classic()+
-  labs(subtitle = .subtitle,
-       caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")+
-  xlab("Total Confiremed")+
-  ylab("Total Death")+
+      labs(subtitle = .subtitle,
+           caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")+
+      xlab("Total Confiremed")+
+      ylab("Total Death")+
       theme(legend.title = element_blank(),
             legend.position = c(0.9, 0.15))
   }
 ```
 
 
-```{r}
+```{r, include=FALSE}
 .date <-
   c("2020-02-27", "2020-03-08") %>% 
   ymd()
@@ -85,8 +89,9 @@ dat %>%
 dat %>% 
   gg_cdplot(.date)+
   scale_x_continuous(limits = c(0, max(dat$Confirmed) + 15))
+```
 
-
+```{r}
 .date <-
   dat %>% 
   rowid_to_column() %>% 
@@ -99,6 +104,8 @@ g1 <-
   dat %>% 
   gg_cdplot(.date)+
   scale_x_continuous(limits = c(0, max(dat$Confirmed) + 15))
+
+g1
 ```
 
 ```{r, fig.width=8, fig.height=3}
@@ -111,8 +118,8 @@ dat_d <-
 
 g2 <-
   dat_d %>%
-  select(Date, weekly_Death, weekly_Confirmed, weekly_Test, weekly_positive) %>% 
-  pivot_longer(cols = c(weekly_Confirmed, weekly_Death, weekly_Test, weekly_positive)) %>%
+  select(Date, starts_with("weekly")) %>% 
+  pivot_longer(cols = starts_with("weekly")) %>%
   filter(!is.na(value)) %>% 
   ggplot()+
   aes(Date, value, color = name)+
@@ -140,7 +147,7 @@ wp
 ggsave("fig/fig_Jp.png", wp, width = 9, height = 9)
 ```
 
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=8, fig.height=5}
 g2+
   geom_vline(xintercept = c("2020-03-23") %>% ymd,
              linetype = "dotted")+
@@ -152,13 +159,7 @@ g2+
 
 ```{r}
 dat %>% 
-  filter(Date >= ymd("2020-03-08")) %>% 
-  lm(Death ~ Confirmed, data = .) %>% 
-  summary()
-
-dat %>% 
-  filter(Date >= ymd("2020-02-26"), 
-         Date <= ymd("2020-03-02")) %>% 
+  filter(Date >= ymd("2020-04-01")) %>% 
   lm(Death ~ Confirmed, data = .) %>% 
   summary()
 ```
