@@ -156,20 +156,19 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 現時点では、他の地域でも同様の強度で局所的な感染が発生していないかどうかを見極めることが優先されます。
 
-[Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
+## [Interim Clinical Guidance for Management of Patients with Confirmed Coronavirus Disease (COVID-19)](https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-guidance-management-patients.html#foot04)
 
-[Articleswww.thelancet.com Vol 395   February 15, 2020507Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930211-7)
+## [Articleswww.thelancet.com Vol 395   February 15, 2020507Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930211-7)
 
-[Modeling the Transmission of Middle EastRespirator Syndrome Corona Virus in theRepublic of Korea](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4686901/pdf/pone.0144778.pdf)
+## [Modeling the Transmission of Middle EastRespirator Syndrome Corona Virus in theRepublic of Korea](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4686901/pdf/pone.0144778.pdf)
 
-[The basic reproduction number of novel coronavirus (2019-nCoV) estimation based on exponential growth in the early outbreak in China from 2019 to 2020: A reply to Dhungana](https://reader.elsevier.com/reader/sd/pii/S1201971220300837?token=E0088C2AE5B95A03FA8B88A143E44660CE2D842BB49C509B1C6F3E369D8E8DFDF46303E3483A903D507B6917CCBD624E)
+## [The basic reproduction number of novel coronavirus (2019-nCoV) estimation based on exponential growth in the early outbreak in China from 2019 to 2020: A reply to Dhungana](https://reader.elsevier.com/reader/sd/pii/S1201971220300837?token=E0088C2AE5B95A03FA8B88A143E44660CE2D842BB49C509B1C6F3E369D8E8DFDF46303E3483A903D507B6917CCBD624E)
 
-[Characteristics of COVID-19 infection in Beijing](https://reader.elsevier.com/reader/sd/pii/S0163445320301018?token=59E09B8014DC57B092BD74B11A4954EAAC90C32453F436D2307B6A3DF7FB3934B3411492AE7C43A50528FEBEF40C0E0F)
+## [Characteristics of COVID-19 infection in Beijing](https://reader.elsevier.com/reader/sd/pii/S0163445320301018?token=59E09B8014DC57B092BD74B11A4954EAAC90C32453F436D2307B6A3DF7FB3934B3411492AE7C43A50528FEBEF40C0E0F)
 
-[Investigation of three clusters of COVID-19 in Singapore: implications for surveillance and response measures](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930528-6)
+## [Investigation of three clusters of COVID-19 in Singapore: implications for surveillance and response measures](https://www.thelancet.com/action/showPdf?pii=S0140-6736%2820%2930528-6)
 
-
-[Guidelines for Investigating Clusters of Health Events (CDC)](https://www.cdc.gov/mmwr/preview/mmwrhtml/00001797.htm)
+## [Guidelines for Investigating Clusters of Health Events (CDC)](https://www.cdc.gov/mmwr/preview/mmwrhtml/00001797.htm)
 
 ## ["Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection", Bernheim, A. et al., Radiology, Feb 20](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
 
@@ -189,7 +188,9 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 従って、症状発症初期では胸部CTの感度と陰性予測能力には限界があり、COVID19の感染を除外するための信頼に足る単独のツールとはいえない。
 
-[WITHDRAWN: Experimental Treatment with Favipiravir for COVID-19: An Open-Label Control Study](https://www.sciencedirect.com/science/article/pii/S2095809920300631) -> アビガンの臨床研究がWITHDRAW?
+## [WITHDRAWN: Experimental Treatment with Favipiravir for COVID-19: An Open-Label Control Study](https://www.sciencedirect.com/science/article/pii/S2095809920300631)
+
+-> アビガンの臨床研究がWITHDRAW?
 
 ## ["Closed environments facilitate secondary transmission of coronavirus disease 2019 (COVID-19)", Nishiura H. et al., medRxiv, 03 Mar](https://www.medrxiv.org/content/10.1101/2020.02.28.20029272v1)
 
@@ -224,6 +225,6 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 閉鎖環境がCOVID-19の二次感染に寄与し、超拡散事例を促進している可能性がある。
 
-
+## ["SARS-CoV-2 detection in patients with influenza-like illness", Kong, WH et al., NatMicrobio 07 April 2020](https://www.nature.com/articles/s41564-020-0713-1)
 
 
