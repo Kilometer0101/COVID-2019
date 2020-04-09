@@ -136,7 +136,7 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 > We obtained information on 5 clusters of cases, shown in Figure 3. On the basis of the dates of illness onset of 6 pairs of cases in these clusters, we estimated that the serial interval distribution had a mean (±SD) of 7.5±3.4 days (95% CI, 5.3 to 19) (Figure 2B).
 
-![](https://www.nejm.org/na101/home/literatum/publisher/mms/journals/content/nejm/2020/nejm_2020.382.issue-13/nejmoa2001316/20200320/images/img_xlarge/nejmoa2001316_f3.jpeg)
+![](fig/fig_Li2020Fig3.png)
 
 > Fig.3: Detailed Information on Exposures and Dates of Illness Onset in Five Clusters Including 16 Cases.
 
@@ -222,6 +222,8 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 > It is plausible that closed environments contribute to secondary transmission of COVID-19 and promote superspreading events. 
 
 閉鎖環境がCOVID-19の二次感染に寄与し、超拡散事例を促進している可能性がある。
+
+> コメント： total of 110 cases among eleven clusters というデータセットの説明がよく分からない。Figにはクラスター以外のデータも含まれているということなのか。接触追跡データとは何か不明。図のx=0の白棒が長すぎるように見える。これは追跡できていないだけという可能性は否定されているのか。primaryとsecondaryの感染者がごたまぜでFigに入っている？ので解釈がよく分からない。説得力を持たせるためにはクラスター構造ごとの伝播関係を例えばLi 2020と同じように示すべきだろう。
 
 ## ["SARS-CoV-2 detection in patients with influenza-like illness", Kong, WH et al., NatMicrobio 07 April 2020](https://www.nature.com/articles/s41564-020-0713-1)
 
