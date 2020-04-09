@@ -104,6 +104,19 @@ g_age
 ```r
 ggsave("fig/fig_Tokyo.png", g_age,
        width = 7, height = 4)
+
+g_age_log <-
+  g_age+
+  scale_y_log10()
+
+g_age_log
+```
+
+![](Tokyo_files/figure-html/unnamed-chunk-3-3.png)<!-- -->
+
+```r
+ggsave("fig/fig_Tokyo_log.png", g_age_log,
+       width = 7, height = 4)
 ```
 
 
