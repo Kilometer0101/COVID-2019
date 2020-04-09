@@ -17,6 +17,11 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 library(data.table)
+<<<<<<< HEAD
+
+.subtitle <- "As of 09 April 2020"
+=======
+>>>>>>> 04c6d72e21873527738226023e96ff9b1414da99
 ```
 
 ```{r, eval = F}

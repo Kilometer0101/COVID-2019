@@ -25,6 +25,9 @@ output:
 
 ![](./fig/fig_Tokyo.png)
 
+![](./fig/fig_Tokyo_log.png)
+
+
 
 [code](Tokyo.md)
 
