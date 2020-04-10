@@ -17,11 +17,7 @@ library(ggrepel)
 library(lubridate)
 library(DT)
 library(data.table)
-<<<<<<< HEAD
 
-.subtitle <- "As of 09 April 2020"
-=======
->>>>>>> 04c6d72e21873527738226023e96ff9b1414da99
 ```
 
 ```{r, eval = F}
@@ -32,9 +28,6 @@ library(DT)
 library(data.table)
 ```
 
-```{r}
-.subtitle <- "As of 08 April 2020"
-```
 
 ```{r}
 dat <- 
@@ -45,6 +38,14 @@ dat <-
   arrange(Date) %>% 
   mutate(from = "JP Ministry")
 ```
+
+```{r, eval = T}
+.day <- 
+  dat$Date %>% max %>% as.character
+
+.subtitle <- str_c("As of ", .day)
+```
+
 
 ```{r, echo=F}
 tail(dat)

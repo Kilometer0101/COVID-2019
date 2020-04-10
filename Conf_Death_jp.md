@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/04/09"
+date: "2020/04/10"
 output: 
   html_document:
     keep_md: true
@@ -22,10 +22,6 @@ library(data.table)
 ```
 
 
-```r
-.subtitle <- "As of 08 April 2020"
-```
-
 
 ```r
 dat <- 
@@ -38,14 +34,23 @@ dat <-
 ```
 
 
+```r
+.day <- 
+  dat$Date %>% max %>% as.character
+
+.subtitle <- str_c("As of ", .day)
+```
+
+
+
 ```
 ##          Date Confirmed  Test Death comment        from
-## 53 2020-04-04      2935 42882    69         JP Ministry
 ## 54 2020-04-05      3271 44639    70         JP Ministry
 ## 55 2020-04-06      3654 46172    73         JP Ministry
 ## 56 2020-04-07      3906 55311    80         JP Ministry
 ## 57 2020-04-08      4257 61498    81         JP Ministry
 ## 58 2020-04-09      4768 64378    85         JP Ministry
+## 59 2020-04-10      5347 68771    88         JP Ministry
 ```
 
 
@@ -162,56 +167,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-<<<<<<< HEAD
-## -15.044  -4.948   1.901   7.847   9.373 
+## -2.7924 -1.0118 -0.2142  0.8494  3.6465 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 12.970721   2.388502    5.43 6.25e-06 ***
-## Confirmed    0.017782   0.001182   15.05 8.52e-16 ***
+## (Intercept) 3.722e+01  2.408e+00   15.45 3.06e-07 ***
+## Confirmed   1.002e-02  6.564e-04   15.27 3.36e-07 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 7.977 on 31 degrees of freedom
-## Multiple R-squared:  0.8796,	Adjusted R-squared:  0.8757 
-## F-statistic: 226.4 on 1 and 31 DF,  p-value: 8.523e-16
-```
-
-```r
-dat %>% 
-  filter(Date >= ymd("2020-02-26"), 
-         Date <= ymd("2020-03-02")) %>% 
-  lm(Death ~ Confirmed, data = .) %>% 
-  summary()
-```
-
-```
-## 
-## Call:
-## lm(formula = Death ~ Confirmed, data = .)
-## 
-## Residuals:
-##        1        2        3        4        5        6 
-## -0.42249  0.43961  0.19827  0.16382 -0.30169 -0.07753 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -7.06003    1.03927  -6.793 0.002452 ** 
-## Confirmed    0.05172    0.00481  10.754 0.000424 ***
-=======
-## -1.9610 -0.8910 -0.3756  0.5633  2.3625 
-## 
-## Coefficients:
-##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 3.266e+01  2.650e+00   12.32 1.74e-05 ***
-## Confirmed   1.158e-02  8.212e-04   14.10 7.95e-06 ***
->>>>>>> 04c6d72e21873527738226023e96ff9b1414da99
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 1.628 on 6 degrees of freedom
-## Multiple R-squared:  0.9707,	Adjusted R-squared:  0.9658 
-## F-statistic: 198.7 on 1 and 6 DF,  p-value: 7.953e-06
+## Residual standard error: 2.068 on 8 degrees of freedom
+## Multiple R-squared:  0.9668,	Adjusted R-squared:  0.9627 
+## F-statistic:   233 on 1 and 8 DF,  p-value: 3.364e-07
 ```
 
 
