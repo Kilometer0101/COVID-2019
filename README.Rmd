@@ -228,7 +228,7 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 閉鎖環境がCOVID-19の二次感染に寄与し、超拡散事例を促進している可能性がある。
 
-> コメント： total of 110 cases among eleven clusters というデータセットの説明がよく分からない。Figにはクラスター以外のデータも含まれているということなのか。接触追跡データとは何か不明。図のx=0の白棒が長すぎるように見える。これは追跡できていないだけという可能性は否定されているのか。primaryとsecondaryの感染者がごたまぜでFigに入っている？ので解釈がよく分からない。説得力を持たせるためにはクラスター構造ごとの伝播関係を例えばLi 2020と同じように示すべきだろう。
+[この論文に関するコメントを別にまとめました。](https://note.com/kilometer/n/nf457860c3416)
 
 ## ["SARS-CoV-2 detection in patients with influenza-like illness", Kong, WH et al., NatMicrobio 07 April 2020](https://www.nature.com/articles/s41564-020-0713-1)
 
