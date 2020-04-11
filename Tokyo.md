@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/04/10"
+date: "2020/04/12"
 output: 
   html_document:
     keep_md: true
@@ -25,6 +25,13 @@ library(data.table)
 dat_raw <- 
   .url %>% 
   fread(data.table = F)
+```
+
+
+```r
+dat_raw %>% 
+  write.csv("data/130001_tokyo_covid19_patients.csv",
+            row.names = F)
 ```
 
 
@@ -60,7 +67,7 @@ dat_nest_age %>%
        subtitle = .subtitle)
 ```
 
-![](Tokyo_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](Tokyo_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 ```r
 dat_n <-
@@ -99,7 +106,7 @@ g_age <-
 g_age
 ```
 
-![](Tokyo_files/figure-html/unnamed-chunk-3-2.png)<!-- -->
+![](Tokyo_files/figure-html/unnamed-chunk-4-2.png)<!-- -->
 
 ```r
 ggsave("fig/fig_Tokyo.png", g_age,
@@ -112,7 +119,7 @@ g_age_log <-
 g_age_log
 ```
 
-![](Tokyo_files/figure-html/unnamed-chunk-3-3.png)<!-- -->
+![](Tokyo_files/figure-html/unnamed-chunk-4-3.png)<!-- -->
 
 ```r
 ggsave("fig/fig_Tokyo_log.png", g_age_log,
@@ -129,7 +136,7 @@ g_age +
             y = 100)
 ```
 
-![](Tokyo_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](Tokyo_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 
 

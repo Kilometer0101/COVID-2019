@@ -33,6 +33,12 @@ dat_raw <-
 ```
 
 ```{r}
+dat_raw %>% 
+  write.csv("data/130001_tokyo_covid19_patients.csv",
+            row.names = F)
+```
+
+```{r}
 dat <-
   dat_raw %>% 
   rename(date = 公表_年月日,
