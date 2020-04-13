@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/12"
+date: "2020/04/14"
 output: 
   html_document:
     keep_md: true
@@ -230,4 +230,4 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 ## ["SARS-CoV-2 detection in patients with influenza-like illness", Kong, WH et al., NatMicrobio 07 April 2020](https://www.nature.com/articles/s41564-020-0713-1)
 
-
+## ["No Association of COVID-19 transmission with temperature or UV radiation in Chinese cities", Yao et al., 29 Mar 2020](https://erj.ersjournals.com/content/early/2020/04/01/13993003.00517-2020)
