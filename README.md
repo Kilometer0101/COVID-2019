@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/14"
+date: "2020/04/17"
 output: 
   html_document:
     keep_md: true
@@ -25,7 +25,6 @@ output:
 
 ![](./fig/fig_Tokyo.png)
 
-![](./fig/fig_Tokyo_log.png)
 
 
 
