@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/04/15"
+date: "2020/04/17"
 output: 
   html_document:
     keep_md: true
@@ -27,10 +27,10 @@ library(data.table)
 dat <- 
   "data/corona_jp.csv" %>% 
   fread(data.table = F) %>% 
-  filter(!is.na(Confirmed)) %>% 
+#  filter(!is.na(Confirmed)) %>% 
   mutate(Date = ymd(Date)) %>%
   arrange(Date) %>% 
-  mutate(from = "JP Ministry")
+  mutate(from = if_else(from == "Ministry", "JP Ministry", "Prefecture total"))
 ```
 
 
@@ -44,13 +44,13 @@ dat <-
 
 
 ```
-##          Date Confirmed  Test Death comment        from
-## 59 2020-04-10      5347 68771    88         JP Ministry
-## 60 2020-04-11      6005 74891    94         JP Ministry
-## 61 2020-04-12      6748 77381    98         JP Ministry
-## 62 2020-04-13      7255 78702   102         JP Ministry
-## 63 2020-04-14      7645 89551   109         JP Ministry
-## 64 2020-04-15      8100 94236   119         JP Ministry
+##          Date Confirmed   Test Death             from comment
+## 64 2020-04-14      7645     NA   132 Prefecture total        
+## 65 2020-04-14      7645  89551   109      JP Ministry        
+## 66 2020-04-15      8100     NA   147 Prefecture total        
+## 67 2020-04-15      8100  94236   119      JP Ministry        
+## 68 2020-04-16      8582     NA   170 Prefecture total        
+## 69 2020-04-16      8582 100703   136      JP Ministry
 ```
 
 
@@ -60,12 +60,14 @@ gg_cdplot <-
     dat %>% 
       ggplot()+
       aes(Confirmed, Death)+
-      geom_path()+
+      geom_path(aes(linetype = from))+
       geom_point(aes(shape = from))+
       geom_vline(data = dat %>% filter(Date %in% .date),
                  aes(xintercept = Confirmed), 
                  linetype = "dotted")+ 
-      geom_text(data = dat %>% filter(Date %in% .date),
+      geom_text(data = dat %>%
+                  filter(from == "JP Ministry") %>% 
+                  filter(Date %in% .date),
                 aes(label = Date, y = Death + 10))+
       theme_classic()+
       labs(subtitle = .subtitle,
@@ -79,11 +81,10 @@ gg_cdplot <-
 
 
 
-
-
 ```r
 .date <-
-  dat %>% 
+  dat %>%
+  filter(from == "JP Ministry") %>% 
   rowid_to_column() %>% 
   mutate(rowid = rowid - max(rowid)) %>% 
   filter(rowid %% 7 == 0) %>% 
@@ -98,12 +99,13 @@ g1 <-
 g1
 ```
 
-![](Conf_Death_jp_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](Conf_Death_jp_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 
 ```r
 dat_d <-
   dat %>% 
+  filter(from == "JP Ministry") %>% 
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7),
          weekly_Test = Test - lag(Test, 7),
@@ -133,7 +135,7 @@ g2 <-
 ## Warning in (function (..., na.rm = FALSE) : 引数は部分的に再利用されます
 ```
 
-![](Conf_Death_jp_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](Conf_Death_jp_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 ```
 ## Warning in (function (..., na.rm = FALSE) : 引数は部分的に再利用されます
@@ -149,7 +151,7 @@ g2+
                 y = 0))
 ```
 
-![](Conf_Death_jp_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](Conf_Death_jp_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 
 
@@ -167,18 +169,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4.1903 -1.2524 -0.7523  1.8577  5.0920 
+## -18.326  -8.098   0.683   3.746  32.375 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 3.993e+01  1.903e+00   20.98 2.08e-11 ***
-## Confirmed   9.133e-03  3.719e-04   24.56 2.81e-12 ***
+## (Intercept) 25.748884   7.412340   3.474  0.00271 ** 
+## Confirmed    0.013036   0.001238  10.530 4.01e-09 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.788 on 13 degrees of freedom
-## Multiple R-squared:  0.9789,	Adjusted R-squared:  0.9773 
-## F-statistic: 603.1 on 1 and 13 DF,  p-value: 2.809e-12
+## Residual standard error: 12.27 on 18 degrees of freedom
+## Multiple R-squared:  0.8603,	Adjusted R-squared:  0.8526 
+## F-statistic: 110.9 on 1 and 18 DF,  p-value: 4.013e-09
 ```
 
 

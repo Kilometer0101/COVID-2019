@@ -33,10 +33,10 @@ library(data.table)
 dat <- 
   "data/corona_jp.csv" %>% 
   fread(data.table = F) %>% 
-  filter(!is.na(Confirmed)) %>% 
+#  filter(!is.na(Confirmed)) %>% 
   mutate(Date = ymd(Date)) %>%
   arrange(Date) %>% 
-  mutate(from = "JP Ministry")
+  mutate(from = if_else(from == "Ministry", "JP Ministry", "Prefecture total"))
 ```
 
 ```{r, eval = T}
@@ -57,12 +57,14 @@ gg_cdplot <-
     dat %>% 
       ggplot()+
       aes(Confirmed, Death)+
-      geom_path()+
+      geom_path(aes(linetype = from))+
       geom_point(aes(shape = from))+
       geom_vline(data = dat %>% filter(Date %in% .date),
                  aes(xintercept = Confirmed), 
                  linetype = "dotted")+ 
-      geom_text(data = dat %>% filter(Date %in% .date),
+      geom_text(data = dat %>%
+                  filter(from == "JP Ministry") %>% 
+                  filter(Date %in% .date),
                 aes(label = Date, y = Death + 10))+
       theme_classic()+
       labs(subtitle = .subtitle,
@@ -75,31 +77,10 @@ gg_cdplot <-
 ```
 
 
-```{r, include=FALSE}
-.date <-
-  c("2020-02-27", "2020-03-08") %>% 
-  ymd()
-
-dat %>% 
-  gg_cdplot(.date)
-
-.date <- 
-  dat %>% 
-  rowid_to_column() %>% 
-  mutate(tag = ifelse(Date == "2020-02-27", rowid,0),
-         tag = sum(tag)) %>% 
-  mutate(rowid = rowid - tag) %>% 
-  filter(rowid %% 7 == 0) %>% 
-  .$Date
-
-dat %>% 
-  gg_cdplot(.date)+
-  scale_x_continuous(limits = c(0, max(dat$Confirmed) + 15))
-```
-
 ```{r}
 .date <-
-  dat %>% 
+  dat %>%
+  filter(from == "JP Ministry") %>% 
   rowid_to_column() %>% 
   mutate(rowid = rowid - max(rowid)) %>% 
   filter(rowid %% 7 == 0) %>% 
@@ -117,6 +98,7 @@ g1
 ```{r, fig.width=8, fig.height=3}
 dat_d <-
   dat %>% 
+  filter(from == "JP Ministry") %>% 
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7),
          weekly_Test = Test - lag(Test, 7),
