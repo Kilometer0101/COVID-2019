@@ -118,7 +118,7 @@ g2 <-
   scale_y_continuous(limits = c(0, NA))+
   theme(legend.position = "none")+
   xlab("Date")+
-  ylab("Weekly total value")+
+  ylab("Rolling 7days sum")+
   labs(subtitle = .subtitle,
        caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")
 ```
