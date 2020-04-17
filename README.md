@@ -170,24 +170,6 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 ## [Guidelines for Investigating Clusters of Health Events (CDC)](https://www.cdc.gov/mmwr/preview/mmwrhtml/00001797.htm)
 
-## ["Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection", Bernheim, A. et al., Radiology, Feb 20](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
-
->  Indeed, given the limited number of rRT-PCR kits in some centers and the possibility of false negative rRT-PCR results, the National Health Commission of the People’s Republic of China has encouraged diagnosis based on clinical and chest CT findings alone [28]. 
-
-実際、rRT-PCRキットの数が限られているため、rRT-PCRの結果が偽陰性になる可能性を考慮して、中国の国家衛生委員会は臨床初見と胸部CTのみに基づく診断を推奨している [National Health Commission of the People’s Republic of China website](www.en.nhc.gov/cn/2020-02/13/c_76515.htm)。
-
-> In this study of 121 patients with confirmed Covid-19 infection, it is noteworthy that 20/36 (56%) of patients imaged 0-2 days (‘early’) after symptom onset had a normal CT with complete absence of ground-glass opacities and consolidation (as opposed to 3/33 [9%] of intermediate patients and 1/25 [4%] of late patients). 
-
-この研究では、COVID-19の感染が確認された121名を対象に行われた。症状発症後すぐ(0-2日, "初期")に撮影されたCT画像において20/36 (56%) の患者においてすりガラス陰影も浸潤影も観察され**なかった**ことは注目に値する（これは中期の患者の3/33(9%)、後期の患者の1/25(4%)にも当てはまった）。
-
-> Only one of these patients (who was in the early group) had an initially negative rRT-PCR result, suggesting that rRT-PCR is positive even in patients with normal chest CT. 
-
-このうちrRT-PCRで陰性だったのは初期グループに含まれるたった1人だった。すなわち胸部CTが正常な患者であってもrRT-PCRでは陽性だった。
-
-> Chest CT therefore has limited sensitivity and negative predictive value early after symptom onset, and is thereby unlikely a reliable standalone tool to rule out COVID-19 infection.
-
-従って、症状発症初期では胸部CTの感度と陰性予測能力には限界があり、COVID19の感染を除外するための信頼に足る単独のツールとはいえない。
-
 ## [WITHDRAWN: Experimental Treatment with Favipiravir for COVID-19: An Open-Label Control Study](https://www.sciencedirect.com/science/article/pii/S2095809920300631)
 
 -> アビガンの臨床研究がWITHDRAW?
@@ -230,3 +212,75 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 ## ["SARS-CoV-2 detection in patients with influenza-like illness", Kong, WH et al., NatMicrobio 07 April 2020](https://www.nature.com/articles/s41564-020-0713-1)
 
 ## ["No Association of COVID-19 transmission with temperature or UV radiation in Chinese cities", Yao et al., 29 Mar 2020](https://erj.ersjournals.com/content/early/2020/04/01/13993003.00517-2020)
+
+
+## ["Chest Computed Tomography for Detection of Coronavirus Disease 2019 (COVID-19): Don't Rush the Science", Hope et al., AoIM, 08 April](https://annals.org/aim/fullarticle/2764546/chest-computed-tomography-detection-coronavirus-disease-2019-covid-19-don)
+
+> A rush to publish positive results leads to their overinterpretation and, consequently, the dissemination of premature conclusions with broad implications.
+
+> The findings of COVID-19 pneumonia that were used (for example, consolidation and ground-glass opacity) are not specific to the disease; rather, they are commonly seen in a range of infectious and noninfectious conditions. Consequently, positive CT results are only believable if the pretest probability of COVID-19 is high.
+
+> The American College of Radiology helped to resolve this confusion with guidelines for the use of imaging for suspected COVID-19 infection in mid-March (last updated March 22) ([7: ACR Recommendations](https://www.acr.org/Advocacy-and-Economics/ACR-Position-Statements/Recommendations-for-Chest-Radiography-and-CT-for-Suspected-COVID19-Infection)). 
+
+## ["ACR Recommendations for the use of Chest Radiography and Computed Tomography (CT) for Suspected COVID-19 Infection", 22 Mar](https://www.acr.org/Advocacy-and-Economics/ACR-Position-Statements/Recommendations-for-Chest-Radiography-and-CT-for-Suspected-COVID19-Infection)
+
+>  The Centers for Disease Control (CDC) does not currently recommend CXR or CT to diagnose COVID-19. Viral testing remains the only specific method of diagnosis. Confirmation with the viral test is required, even if radiologic findings are suggestive of COVID-19 on CXR or CT.
+
+> Generally, the findings on chest imaging in COVID-19 are not specific, and overlap with other infections, including influenza, H1N1, SARS and MERS.
+
+> Based on these concerns, the ACR recommends:  
+・CT should not be used to screen for or as a first-line test to diagnose COVID-19  
+・    (Updated March 22, 2020) As an interim measure, until more widespread COVID-19 testing is available, some medical practices are requesting chest CT to inform decisions on whether to test a patient for COVID-19, admit a patient or provide other treatment. The ACR strongly urges caution in taking this approach. A normal chest CT does not mean a person does not have COVID-19 infection - and an abnormal CT is not specific for COVID-19 diagnosis. A normal CT should not dissuade a patient from being quarantined or provided other clinically indicated treatment when otherwise medically appropriate. Clearly, locally constrained resources may be a factor in such decision making.
+
+
+## ["新型コロナウイルス肺炎(COVID-19)に対するCT検査については慎重な対応を", 井田, 19 Feb](https://jcr.or.jp/covid19_2020/covid-19_200218/) 
+
+
+## ["Radiological findings from 81 patients with COVID-19 pneumonia in Wuhan, China: a descriptive study", Shi et al., Lancet, 24 Feb](https://www.sciencedirect.com/science/article/pii/S1473309920300864)
+
+> COVID-19 pneumonia manifests with chest CT imaging abnormalities, even in asymptomatic patients, with rapid evolution from focal unilateral to diffuse bilateral ground-glass opacities that progressed to or co-existed with consolidations within 1–3 weeks. Combining assessment of imaging features with clinical and laboratory findings could facilitate early diagnosis of COVID-19 pneumonia.
+
+## ["Longitudinal CT Findings in COVID-19 Pneumonia: Case Presenting Organizing Pneumonia Pattern", Wu et al., Radiology, 14 Feb](https://pubs.rsna.org/doi/10.1148/ryct.2020200031)
+
+
+## ["Chest CT Findings in Coronavirus Disease-19 (COVID-19): Relationship to Duration of Infection", Bernheim, A. et al., Radiology, Feb 20](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200463)
+
+>  Indeed, given the limited number of rRT-PCR kits in some centers and the possibility of false negative rRT-PCR results, the National Health Commission of the People’s Republic of China has encouraged diagnosis based on clinical and chest CT findings alone [28]. 
+
+実際、rRT-PCRキットの数が限られているため、rRT-PCRの結果が偽陰性になる可能性を考慮して、中国の国家衛生委員会は臨床初見と胸部CTのみに基づく診断を推奨している [National Health Commission of the People’s Republic of China website](www.en.nhc.gov/cn/2020-02/13/c_76515.htm)。
+
+> In this study of 121 patients with confirmed Covid-19 infection, it is noteworthy that 20/36 (56%) of patients imaged 0-2 days (‘early’) after symptom onset had a normal CT with complete absence of ground-glass opacities and consolidation (as opposed to 3/33 [9%] of intermediate patients and 1/25 [4%] of late patients). 
+
+この研究では、COVID-19の感染が確認された121名を対象に行われた。症状発症後すぐ(0-2日, "初期")に撮影されたCT画像において20/36 (56%) の患者においてすりガラス陰影も浸潤影も観察され**なかった**ことは注目に値する（これは中期の患者の3/33(9%)、後期の患者の1/25(4%)にも当てはまった）。
+
+> Only one of these patients (who was in the early group) had an initially negative rRT-PCR result, suggesting that rRT-PCR is positive even in patients with normal chest CT. 
+
+このうちrRT-PCRで陰性だったのは初期グループに含まれるたった1人だった。すなわち胸部CTが正常な患者であってもrRT-PCRでは陽性だった。
+
+> Chest CT therefore has limited sensitivity and negative predictive value early after symptom onset, and is thereby unlikely a reliable standalone tool to rule out COVID-19 infection.
+
+従って、症状発症初期では胸部CTの感度と陰性予測能力には限界があり、COVID19の感染を除外するための信頼に足る単独のツールとはいえない。
+
+
+## ["Sensitivity of Chest CT for COVID-19: Comparison to RT-PCR", Fang et al., Radiology, 19 Feb](https://pubs.rsna.org/doi/10.1148/radiol.2020200432)
+
+> In a series of 51 patients with chest CT and RT-PCR assay performed within 3 days, the sensitivity of CT for COVID-19 infection was 98% compared to RT-PCR sensitivity of 71% (p<.001).
+
+## ["CT Imaging Features of 2019 Novel Coronavirus (2019-nCoV)", Chung et al., Radiology, 04 Feb](https://pubs.rsna.org/doi/full/10.1148/radiol.2020200230)
+
+> Of 21 patients with the 2019 novel coronavirus, 15 (71%) had involvement of more than two lobes at chest CT, 12 (57%) had ground-glass opacities, seven (33%) had opacities with a rounded morphology, seven (33%) had a peripheral distribution of disease, six (29%) had consolidation with ground-glass opacities, and four (19%) had crazy-paving pattern.
+
+> Fourteen percent of patients (three of 21) presented with a normal CT scan.
+
+## ["Chest CT for Typical 2019-nCoV Pneumonia: Relationship to Negative RT-PCR Testing", Xie et al., Radiology, 12 Feb](https://pubs.rsna.org/doi/10.1148/radiol.2020200343)
+
+> In patients at high risk for 2019-nCoV infection, chest CT evidence of viral pneumonia may precede positive negative RT-PCR test results.
+
+
+## ["Rates of Co-infection Between SARS-CoV-2 and Other Respiratory Pathogens"](https://jamanetwork.com/journals/jama/fullarticle/2764787?guestAccessKey=6f011e04-8692-45d4-86d6-765d0528e063&utm_source=silverchair&utm_medium=email&utm_campaign=article_alert-jama&utm_content=olf&utm_term=041520)
+
+## ["CRISPR–Cas12-based detection of SARS-CoV-2", Broughton et al., NatBiotech, 16 April](https://www.nature.com/articles/s41587-020-0513-4?utm_source=twitter&utm_medium=social&utm_content=organic&utm_campaign=NGMT_USG_JC01_GL_NRJournals)
+
+> Visualization of the Cas12 detection reaction is achieved using a FAM-biotin reporter molecule and lateral flow strips designed to capture labeled nucleic acids (Fig. 2a)12. Uncleaved reporter molecules are captured at the first detection line (control line), whereas indiscriminate Cas12 cleavage activity generates a signal at the second detection line (test line). To compare the signal generated by Cas12 when using fluorescence or lateral flow, we carried out RT–LAMP using 5-fM or 0-fM IVT template using N gene primers and monitored the performance of the Cas12 readout on identical amplicons using a fluorescent plate reader and by lateral flow at 0, 2.5, 5 and 10 min (Fig. 2b,c). The Cas12 fluorescent signal was detectable in <1 min and a visual signal by lateral flow was achieved within 5 min.
+
+> Fig.2e: Patient sample DETECTR data from lateral flow readout. Clinical samples from six patients with COVID-19 infection (n = 11, 5 replicates) and 12 patients infected with influenza or one of the four seasonal coronaviruses (HCoV-229E, HCoV-HKU1, HCoV-NL63, HCoV-OC43) (n = 12) were analyzed using SARS-CoV-2 DETECTR assay. Signal intensities from lateral flow strips were quantified using ImageJ and normalized to the highest value within the N gene, E gene or RNase P set, with a positive threshold set at 5 × s.d. above background. The final determination for SARS-CoV-2 test results was based on the interpretation matrix in Fig. 1e, with results indicated above the heat map. 
