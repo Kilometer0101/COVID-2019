@@ -172,7 +172,9 @@ NCIPが疑われる症例は、以下の4つの基準をすべて満たす肺炎
 
 ## [WITHDRAWN: Experimental Treatment with Favipiravir for COVID-19: An Open-Label Control Study](https://www.sciencedirect.com/science/article/pii/S2095809920300631)
 
--> アビガンの臨床研究がWITHDRAW?
+-> アビガンの臨床研究がWITHDRAW?（復活してた）
+
+>  In this open-label before-after controlled study, FPV showed better therapeutic responses on COVID-19 in terms of disease progression and viral clearance. These preliminary clinical results provide useful information of treatments for SARS-CoV-2 infection.
 
 ## ["Closed environments facilitate secondary transmission of coronavirus disease 2019 (COVID-19)", Nishiura H. et al., medRxiv, 03 Mar](https://www.medrxiv.org/content/10.1101/2020.02.28.20029272v1)
 
