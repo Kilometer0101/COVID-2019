@@ -45,12 +45,12 @@ dat <-
 
 ```
 ##          Date Confirmed   Test Death             from comment
-## 64 2020-04-14      7645     NA   132 Prefecture total        
-## 65 2020-04-14      7645  89551   109      JP Ministry        
 ## 66 2020-04-15      8100     NA   147 Prefecture total        
 ## 67 2020-04-15      8100  94236   119      JP Ministry        
 ## 68 2020-04-16      8582     NA   170 Prefecture total        
-## 69 2020-04-16      8582 100703   136      JP Ministry
+## 69 2020-04-16      8582 100703   136      JP Ministry        
+## 70 2020-04-17      9167     NA   185 Prefecture total        
+## 71 2020-04-17      9167 106372   148      JP Ministry
 ```
 
 
@@ -169,18 +169,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -18.326  -8.098   0.683   3.746  32.375 
+## -21.818  -8.232   1.446   5.258  34.073 
 ## 
 ## Coefficients:
-##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 25.748884   7.412340   3.474  0.00271 ** 
-## Confirmed    0.013036   0.001238  10.530 4.01e-09 ***
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 20.95244    8.18190   2.561   0.0186 *  
+## Confirmed    0.01418    0.00129  10.991 6.31e-10 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 12.27 on 18 degrees of freedom
-## Multiple R-squared:  0.8603,	Adjusted R-squared:  0.8526 
-## F-statistic: 110.9 on 1 and 18 DF,  p-value: 4.013e-09
+## Residual standard error: 14.24 on 20 degrees of freedom
+## Multiple R-squared:  0.858,	Adjusted R-squared:  0.8509 
+## F-statistic: 120.8 on 1 and 20 DF,  p-value: 6.314e-10
 ```
 
 
