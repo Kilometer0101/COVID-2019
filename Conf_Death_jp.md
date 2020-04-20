@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/04/19"
+date: "2020/04/20"
 output: 
   html_document:
     keep_md: true
@@ -45,12 +45,12 @@ dat <-
 
 ```
 ##          Date Confirmed   Test Death             from comment
-## 70 2020-04-17      9167     NA   185 Prefecture total        
-## 71 2020-04-17      9167 106372   148      JP Ministry        
 ## 72 2020-04-18      9795     NA   195 Prefecture total        
 ## 73 2020-04-18      9795 111325   154      JP Ministry        
 ## 74 2020-04-19     10219     NA   210 Prefecture total        
-## 75 2020-04-19     10219 112816   161      JP Ministry
+## 75 2020-04-19     10219 112816   161      JP Ministry        
+## 76 2020-04-20     10751     NA   223 Prefecture total        
+## 77 2020-04-20     10751 116725   171      JP Ministry
 ```
 
 
@@ -169,18 +169,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -25.443 -12.350   0.775   8.050  36.547 
+## -26.778 -14.261   1.303   9.654  37.981 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 14.823786   8.832853   1.678    0.106    
-## Confirmed    0.015523   0.001256  12.358 6.78e-12 ***
+## (Intercept) 12.063610   9.133193   1.321    0.198    
+## Confirmed    0.016087   0.001241  12.965 7.41e-13 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 16.83 on 24 degrees of freedom
-## Multiple R-squared:  0.8642,	Adjusted R-squared:  0.8585 
-## F-statistic: 152.7 on 1 and 24 DF,  p-value: 6.781e-12
+## Residual standard error: 18.1 on 26 degrees of freedom
+## Multiple R-squared:  0.866,	Adjusted R-squared:  0.8609 
+## F-statistic: 168.1 on 1 and 26 DF,  p-value: 7.413e-13
 ```
 
 
