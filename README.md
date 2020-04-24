@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/23"
+date: "2020/04/24"
 output: 
   html_document:
     keep_md: true
@@ -299,3 +299,13 @@ COVID-19肺炎に関する知見（例えば浸潤影やスリガラス状陰影
 > Fig.2e: Patient sample DETECTR data from lateral flow readout. Clinical samples from six patients with COVID-19 infection (n = 11, 5 replicates) and 12 patients infected with influenza or one of the four seasonal coronaviruses (HCoV-229E, HCoV-HKU1, HCoV-NL63, HCoV-OC43) (n = 12) were analyzed using SARS-CoV-2 DETECTR assay. Signal intensities from lateral flow strips were quantified using ImageJ and normalized to the highest value within the N gene, E gene or RNase P set, with a positive threshold set at 5 × s.d. above background. The final determination for SARS-CoV-2 test results was based on the interpretation matrix in Fig. 1e, with results indicated above the heat map. 
 
 ## ["Detection of 2019 novel coronavirus (2019-nCoV) by real-time RT-PCR", Corman et al., Eurosurveillance, 23 Jan](https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2020.25.3.2000045)
+
+## ["Detection of 2019 novel coronavirus (2019-nCoV) by real-time RT-PCR", Corman et al., Eurosurveillance, 23 Jan](https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2020.25.3.2000045)
+
+## ["Serial Interval of COVID-19 among Publicly Reported Confirmed Cases", Du et al., CDC EID, 19 Mar](https://wwwnc.cdc.gov/eid/article/26/6/20-0357_article)
+
+## ["Virological assessment of hospitalized patients with COVID-2019", Wolfel et al., Nature, 01 April](https://www.nature.com/articles/s41586-020-2196-x)
+
+## ["Endothelial cell infection and endotheliitis in COVID-19", Varga et al., LANCET, 20 April](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30937-5/fulltext)
+
+## ["Is antibody-dependent enhancement playing a role in COVID-19 pathogenesis?" Francesco, Swiss Med Weekly, 16 April](https://smw.ch/article/doi/smw.2020.20249)
