@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/04/20"
+date: "2020/04/23"
 output: 
   html_document:
     keep_md: true
@@ -45,12 +45,12 @@ dat <-
 
 ```
 ##          Date Confirmed   Test Death             from comment
-## 72 2020-04-18      9795     NA   195 Prefecture total        
-## 73 2020-04-18      9795 111325   154      JP Ministry        
-## 74 2020-04-19     10219     NA   210 Prefecture total        
-## 75 2020-04-19     10219 112816   161      JP Ministry        
-## 76 2020-04-20     10751     NA   223 Prefecture total        
-## 77 2020-04-20     10751 116725   171      JP Ministry
+## 75 2020-04-20     10751 116725   223 Prefecture total        
+## 76 2020-04-20     10751 116725   171      JP Ministry        
+## 77 2020-04-21     11119 124550   244 Prefecture total        
+## 78 2020-04-21     11119 124550   186      JP Ministry        
+## 79 2020-04-22     11496 130587   277      JP Ministry        
+## 80 2020-04-23     11919 135983   287      JP Ministry
 ```
 
 
@@ -68,7 +68,7 @@ gg_cdplot <-
       geom_text(data = dat %>%
                   filter(from == "JP Ministry") %>% 
                   filter(Date %in% .date),
-                aes(label = Date, y = Death + 10))+
+                aes(label = Date, y = Death + 20))+
       theme_classic()+
       labs(subtitle = .subtitle,
            caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")+
@@ -105,7 +105,10 @@ g1
 ```r
 dat_d <-
   dat %>% 
-  filter(from == "JP Ministry") %>% 
+  group_by(Date) %>% 
+  filter(Death == max(Death)) %>% 
+  ungroup() %>% 
+#  filter(from == "JP Ministry") %>% 
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7),
          weekly_Test = Test - lag(Test, 7),
@@ -169,18 +172,18 @@ dat %>%
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -26.778 -14.261   1.303   9.654  37.981 
+## -33.509 -24.071   3.419  16.802  62.584 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 12.063610   9.133193   1.321    0.198    
-## Confirmed    0.016087   0.001241  12.965 7.41e-13 ***
+## (Intercept) -4.001209  12.581357  -0.318    0.753    
+## Confirmed    0.019164   0.001572  12.191 6.17e-13 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 18.1 on 26 degrees of freedom
-## Multiple R-squared:  0.866,	Adjusted R-squared:  0.8609 
-## F-statistic: 168.1 on 1 and 26 DF,  p-value: 7.413e-13
+## Residual standard error: 26.62 on 29 degrees of freedom
+## Multiple R-squared:  0.8367,	Adjusted R-squared:  0.8311 
+## F-statistic: 148.6 on 1 and 29 DF,  p-value: 6.167e-13
 ```
 
 

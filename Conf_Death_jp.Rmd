@@ -65,7 +65,7 @@ gg_cdplot <-
       geom_text(data = dat %>%
                   filter(from == "JP Ministry") %>% 
                   filter(Date %in% .date),
-                aes(label = Date, y = Death + 10))+
+                aes(label = Date, y = Death + 20))+
       theme_classic()+
       labs(subtitle = .subtitle,
            caption = "JP Ministry: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html")+
@@ -98,7 +98,10 @@ g1
 ```{r, fig.width=8, fig.height=3}
 dat_d <-
   dat %>% 
-  filter(from == "JP Ministry") %>% 
+  group_by(Date) %>% 
+  filter(Death == max(Death)) %>% 
+  ungroup() %>% 
+#  filter(from == "JP Ministry") %>% 
   mutate(weekly_Death = Death - lag(Death, 7),
          weekly_Confirmed = Confirmed - lag(Confirmed, 7),
          weekly_Test = Test - lag(Test, 7),

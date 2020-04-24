@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/04/20"
+date: "2020/04/23"
 output: 
   html_document:
     keep_md: true
@@ -92,7 +92,7 @@ g_age <-
               group_by(age) %>% 
               filter(date == max(date)),
             aes(label = age), 
-            x = today() %>% ymd %>% {. + 3},
+            x = today() %>% ymd %>% {. + 5},
             family = "HiraKakuPro-W3")+
   scale_x_date(expand = c(0.1, 2))+
   theme_classic()+
