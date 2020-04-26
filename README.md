@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/24"
+date: "2020/04/26"
 output: 
   html_document:
     keep_md: true
@@ -307,5 +307,14 @@ COVID-19肺炎に関する知見（例えば浸潤影やスリガラス状陰影
 ## ["Virological assessment of hospitalized patients with COVID-2019", Wolfel et al., Nature, 01 April](https://www.nature.com/articles/s41586-020-2196-x)
 
 ## ["Endothelial cell infection and endotheliitis in COVID-19", Varga et al., LANCET, 20 April](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30937-5/fulltext)
+
+> SARS-CoV-2 infects the host using the angiotensin converting enzyme 2 (ACE2) receptor, which is expressed in several organs, including the lung, heart, kidney, and intestine. ACE2 receptors are also expressed by endothelial cells. Whether vascular derangements in COVID-19 are due to endothelial cell involvement by the virus is currently unknown. 
+
+SARS-CoV-2のホストへの感染はアンテオジン変換酵素2 (ACE2) 受容体を介する。これは肺・心臓・腎臓・腸などを含むいくつかの臓器において発現が知られている。ACE2は、また、血管内皮細胞(endothelial cells)においても発現することが報告されている。COVID-10の血管障害 (vascular derangements) がウィルスによる血管内皮細部に関連しているかどうかは現時点では不明である。
+
+> Here we demonstrate endothelial cell involvement across vascular beds of different organs in a series of patients with COVID-19
+
+ここでは、COVID-10患者シリーズにおける複数の臓器にまたがる血管床の血管内皮細胞の関与について示した
+
 
 ## ["Is antibody-dependent enhancement playing a role in COVID-19 pathogenesis?" Francesco, Swiss Med Weekly, 16 April](https://smw.ch/article/doi/smw.2020.20249)
