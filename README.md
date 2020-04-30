@@ -1,7 +1,7 @@
 ---
 title: "References"
 author: "km"
-date: "2020/04/29"
+date: "2020/04/30"
 output: 
   html_document:
     keep_md: true
@@ -38,7 +38,10 @@ output:
 [Coronavirus disease (COVID-2019) situation reports (WHO)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports)
 
 
+[COVID-19重症者における人工呼吸器装着数の推移](https://covidecmo.txpmedical.com/)
+
 [COVID-19 testing](https://en.wikipedia.org/wiki/COVID-19_testing)
+
 
 [問14　集団感染を防ぐためにはどうすればよいでしょうか？](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/dengue_fever_qa_00001.html#Q14)
 

@@ -1,7 +1,7 @@
 ---
 title: "Conf_Death_jp"
 author: "km"
-date: "2020/04/28"
+date: "2020/04/30"
 output: 
   html_document:
     keep_md: true
@@ -45,12 +45,12 @@ dat <-
 
 ```
 ##          Date Confirmed   Test Death        from comment
-## 80 2020-04-23     11919 135983   287 JP Ministry        
-## 81 2020-04-24     12388 141600   317 JP Ministry        
 ## 82 2020-04-25     12829 147454   334 JP Ministry        
 ## 83 2020-04-26     13182 149074   348 JP Ministry        
 ## 84 2020-04-27     13385 150692   351 JP Ministry        
-## 85 2020-04-28     13576 160546   376 JP Ministry
+## 85 2020-04-28     13576 160546   376 JP Ministry        
+## 86 2020-04-29     13852 164255   389 JP Ministry        
+## 87 2020-04-30     14088 165609   415 JP Ministry
 ```
 
 
@@ -171,19 +171,19 @@ dat %>%
 ## lm(formula = Death ~ Confirmed, data = .)
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -59.352 -34.697  -6.182  29.349  75.388 
+##    Min     1Q Median     3Q    Max 
+## -68.81 -31.56  -6.01  36.96  85.34 
 ## 
 ## Coefficients:
 ##               Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -37.034044  16.393071  -2.259   0.0304 *  
-## Confirmed     0.024871   0.001845  13.478 3.38e-15 ***
+## (Intercept) -49.664392  17.487776   -2.84  0.00738 ** 
+## Confirmed     0.026925   0.001896   14.20 2.53e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 38.09 on 34 degrees of freedom
-## Multiple R-squared:  0.8423,	Adjusted R-squared:  0.8377 
-## F-statistic: 181.6 on 1 and 34 DF,  p-value: 3.385e-15
+## Residual standard error: 41.95 on 36 degrees of freedom
+## Multiple R-squared:  0.8485,	Adjusted R-squared:  0.8443 
+## F-statistic: 201.6 on 1 and 36 DF,  p-value: 2.531e-16
 ```
 
 
