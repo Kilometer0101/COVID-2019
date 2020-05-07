@@ -80,8 +80,10 @@ g_rollingsum <-
   labs(caption = "cf. https://www.who.int/emergencies/diseases/noxel-coronavirus-2019/situation-reports/")
 ```
 
-```{r}
-wrap_plots(g_conf_death, g_rollingsum,
+```{r, warning=F}
+g <- wrap_plots(g_conf_death, g_rollingsum,
            nrow = 2,
            heights = c(1.5,1))
+
+g
 ```

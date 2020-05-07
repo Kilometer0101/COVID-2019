@@ -79,17 +79,11 @@ g_rollingsum <-
 
 
 ```r
-wrap_plots(g_conf_death, g_rollingsum,
+g <- wrap_plots(g_conf_death, g_rollingsum,
            nrow = 2,
            heights = c(1.5,1))
-```
 
-```
-## Warning: Removed 28 rows containing missing values (geom_path).
-```
-
-```
-## Warning: Removed 32 rows containing missing values (geom_point).
+g
 ```
 
 ![](WHO_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
