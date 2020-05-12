@@ -1,7 +1,7 @@
 ---
 title: "Tokyo"
 author: "km"
-date: "2020/05/05"
+date: "2020/05/13"
 output: 
   html_document:
     keep_md: true
@@ -41,6 +41,7 @@ dat <-
   rename(date = 公表_年月日,
          age = 患者_年代) %>% 
   mutate(date = ymd(date)) %>% 
+  arrange(date) %>% 
   mutate(age = if_else(age == "", "不明", age),
          age = if_else(age == "-", "不明", age))
 

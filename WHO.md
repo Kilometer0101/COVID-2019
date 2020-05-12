@@ -79,6 +79,34 @@ g_rollingsum <-
 
 
 ```r
+g_rollsum2 <-
+  dat_weekly %>% 
+  ggplot()+
+  aes(Date, weekly, color = Country)+
+  geom_path()+
+  geom_point(alpha = 0.5)+
+  facet_wrap(name~Country, scales = "free_y")+
+  theme_minimal()+
+  theme(legend.position = "none")+
+  ylab("Rolling 7 days sum")+
+  xlab("Months")+
+  labs(caption = "cf. https://www.who.int/emergencies/diseases/noxel-coronavirus-2019/situation-reports/")
+  
+g_rollsum2
+```
+
+```
+## Warning: Removed 28 rows containing missing values (geom_path).
+```
+
+```
+## Warning: Removed 32 rows containing missing values (geom_point).
+```
+
+![](WHO_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+
+```r
 g <- wrap_plots(g_conf_death, g_rollingsum,
            nrow = 2,
            heights = c(1.5,1))
@@ -86,4 +114,4 @@ g <- wrap_plots(g_conf_death, g_rollingsum,
 g
 ```
 
-![](WHO_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](WHO_files/figure-html/unnamed-chunk-7-1.png)<!-- -->

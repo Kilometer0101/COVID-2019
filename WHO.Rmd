@@ -80,6 +80,23 @@ g_rollingsum <-
   labs(caption = "cf. https://www.who.int/emergencies/diseases/noxel-coronavirus-2019/situation-reports/")
 ```
 
+```{r, fig.width=7, fig.height=5}
+g_rollsum2 <-
+  dat_weekly %>% 
+  ggplot()+
+  aes(Date, weekly, color = Country)+
+  geom_path()+
+  geom_point(alpha = 0.5)+
+  facet_wrap(name~Country, scales = "free_y")+
+  theme_minimal()+
+  theme(legend.position = "none")+
+  ylab("Rolling 7 days sum")+
+  xlab("Months")+
+  labs(caption = "cf. https://www.who.int/emergencies/diseases/noxel-coronavirus-2019/situation-reports/")
+  
+g_rollsum2
+```
+
 ```{r, warning=F}
 g <- wrap_plots(g_conf_death, g_rollingsum,
            nrow = 2,
